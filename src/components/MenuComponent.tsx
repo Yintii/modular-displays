@@ -1,20 +1,39 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../state/store';
-import { openMenu, closeMenu } from '../state/menu/menuSlice';
+import { 
+    adjustWallHeight,
+    adjustWallWidth,
+    adjustDisplayHeight,
+    adjustDisplayWidth
+} from '../state/menu/menuSlice';
 
 const MenuComponent = () => {
 
     const dispatch = useDispatch();
-    const isOpen = useSelector((state: RootState) => state.menu.isOpen);
 
-    const handleOpen = () => {
-        dispatch(openMenu());
+    const wallHeight = useSelector((state: RootState) => state.menu.wallDimensions.height);
+    const wallWidth = useSelector((state: RootState) => state.menu.wallDimensions.width);
+    const displayHeight = useSelector((state: RootState) => state.menu.displayDimensions.height);
+    const displayWidth = useSelector((state: RootState) => state.menu.displayDimensions.width);
+
+    const handleWallHeightChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+      dispatch(adjustWallHeight(event.target.value));
     }
 
-    const handleClose = () => {
-        dispatch(closeMenu());
+    const handleWallWidthChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        dispatch(adjustWallWidth(event.target.value));
     }
+
+    const handleDisplayHeightChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        dispatch(adjustDisplayHeight(event.target.value));
+    }
+
+    const handleDisplayWidthChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        dispatch(adjustDisplayWidth(event.target.value));
+    }
+
+
 
 
   return (
@@ -30,6 +49,8 @@ const MenuComponent = () => {
             <input
               type='number'
               placeholder='feet'
+              value={wallHeight}
+              onChange={handleWallHeightChange}
             />
           </div>
           <div className="input-item">
@@ -37,6 +58,8 @@ const MenuComponent = () => {
           <input
             type='number'
             placeholder='feet'
+            value={wallWidth}
+            onChange={handleWallWidthChange}
           />
           </div>
           <img width={20} height={20} id='fixed-info' className='hoverInfo' />
@@ -61,6 +84,8 @@ const MenuComponent = () => {
           <input
             type='number'
             placeholder='feet'
+            value={displayHeight}
+            onChange={handleDisplayHeightChange}
           />
           </div>
           <div className="input-item">
@@ -68,6 +93,8 @@ const MenuComponent = () => {
           <input
             type='number'
             placeholder='feet'
+            value={displayWidth}
+            onChange={handleDisplayWidthChange}
           />
           </div>
           <img width={20} height={20} id="display-info" className="hoverInfo"/>
@@ -86,11 +113,9 @@ const MenuComponent = () => {
         </div>
         {/* ModuleMenu goes here */}
         </form>
-        <button onClick={handleOpen}>Open</button>
-        <button onClick={handleClose}>Close</button>
-        {isOpen && <div>Menu is open</div>}
     </div>
   )
 }
+
 
 export default MenuComponent;

@@ -1,5 +1,3 @@
-import './App.css'
-
 import MenuComponent from './components/MenuComponent'
 
 function App() {
@@ -7,7 +5,7 @@ function App() {
   return (
     <>
       <MenuComponent />
-      <h1>our app</h1>
+      <div id="visual-area"></div>
     </>
   )
 }

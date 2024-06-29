@@ -1,6 +1,7 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../state/store';
+import ModuleMenu from './partials/ModuleMenu';
 import { 
     adjustWallHeight,
     adjustWallWidth,
@@ -111,7 +112,7 @@ const MenuComponent = () => {
             </tbody>
           </table>
         </div>
-        {/* ModuleMenu goes here */}
+        <ModuleMenu />
         </form>
     </div>
   )

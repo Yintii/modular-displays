@@ -1,0 +1,28 @@
+{
+    "name": "Infinity-One SMD [9.525mm]",
+    "value": "infinityOneSMD",
+    "ruleset": {
+        "tileVertical": true,
+        "tileHorizontal": true, 
+        "minimum": 2,
+        "preset_1": true,
+        "preset_2": true,
+        "preset_3": true,
+        "preset_4": true
+    },
+    "variations": [
+        {
+            "id": 0,
+            "name": "9.525mm",
+            "pixel_pitch": 9.525,
+            "resolution": {
+                "height": 32,
+                "width": 64
+            },
+            "physical_dimensions_inches": {
+                "height": 12,
+                "width": 24
+            }
+        }
+    ]
+}

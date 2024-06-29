@@ -1,0 +1,57 @@
+{
+    "name": "Opt-Slim [2.6-4.8mm]",
+    "value": "optSlim",
+    "ruleset": {
+        "tileVertical": true,
+        "tileHorizontal": true,
+        "canSplitInHalf": true,
+        "seamless": true,
+        "borderOptional": false,
+        "minimum": 1,
+        "preset_1": true,
+        "preset_2": true,
+        "preset_3": true,
+        "preset_4": true
+    },
+    "variations": [
+        {
+            "id": 0,
+            "name": "2.6mm",
+            "pixel_pitch": 2.6,
+            "resolution": {
+                "height": 384,
+                "width": 192
+            },
+            "physical_dimensions_inches": {
+                "height": 39.4,
+                "width": 19.68
+            }
+        },
+        {
+            "id": 1,
+            "name": "3.9mm",
+            "pixel_pitch": 3.9,
+            "resolution": {
+                "height": 256,
+                "width": 128
+            },
+            "physical_dimensions_inches": {
+                "height": 39.4,
+                "width": 19.68
+            }
+        },
+        {
+            "id": 2,
+            "name": "4.8mm",
+            "pixel_pitch": 4.8,
+            "resolution": {
+                "height": 208,
+                "width": 104
+            },
+            "physical_dimensions_inches": {
+                "height": 39.4,
+                "width": 19.68
+            }
+        }
+    ]
+}

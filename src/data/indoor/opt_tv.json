@@ -1,0 +1,57 @@
+{
+    "name": "Opt-TV [1.2-1.9mm]",
+    "value": "optTV",
+    "ruleset": {
+        "tileHorizontal": true,
+        "tileVertical": false,
+        "canSplitInHalf": false,
+        "seamless": false,
+        "minimum": 1,
+        "borderOptional": false,
+        "preset_1": true,
+        "preset_2": false,
+        "preset_3": false,
+        "preset_4": false
+    },
+    "variations": [
+        {
+            "id": 0,
+            "name": "1.2mm (110\" Diag.)",
+            "pixel_pitch": 1.2,
+            "resolution": {
+                "height": 1080,
+                "width": 1920
+            },
+            "physical_dimensions_inches": {
+                "height": 62.36,
+                "width": 97.44
+            }
+        },
+        {
+            "id": 1,
+            "name": "1.5mm (138\" Diag.)",
+            "pixel_pitch": 1.5,
+            "resolution": {
+                "width": 1920,
+                "height": 1080
+            },
+            "physical_dimensions_inches": {
+                "height": 75.83,
+                "width": 121.38
+            }
+        },
+        {
+            "id": 2,
+            "name": "1.9mm (165\" Diag.)",
+            "pixel_pitch": 1.9,
+            "resolution": {
+                "width": 1920,
+                "height": 1080
+            },
+            "physical_dimensions_inches": {
+                "height": 89.29,
+                "width": 145.32
+            }
+        }
+    ]
+}

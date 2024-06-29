@@ -1,0 +1,71 @@
+{
+    "name": "Opt-Panel 2 [0.94-1.88mm]",
+    "value": "optPanel2",
+    "ruleset": {
+        "tileVertical": true,
+        "tileHorizontal": true,
+        "canSplitInHalf": false,
+        "seamless": true,
+        "borderOptional": false,
+        "minimum": 2,
+        "preset_1": true,
+        "preset_2": true,
+        "preset_3": true,
+        "preset_4": true
+    },
+    "variations": [
+        {
+            "id": 0,
+            "name": "0.94mm",
+            "pixel_pitch": 0.94,
+            "resolution": {
+                "width": 640,
+                "height": 360
+            },
+            "physical_dimensions_inches": {
+                "height": 13.28,
+                "width": 23.62
+            }
+        },
+        {
+            "id": 1,
+            "name": "1.25mm",
+            "pixel_pitch": 1.25,
+            "resolution": {
+                "height": 270,
+                "width": 480
+            },
+            "physical_dimensions_inches": {
+                "height": 13.28,
+                "width": 23.62
+            }
+        },
+        {
+            "id": 2,
+            "name": "1.56mm",
+            "pixel_pitch": 1.56,
+            "resolution": {
+                "height": 216,
+                "width": 384
+            },
+            "physical_dimensions_inches": {
+                "height": 13.28,
+                "width": 23.62
+            }
+        },
+        {
+            "id": 3,
+            "name": "1.88mm",
+            "pixel_pitch": 1.88,
+            "resolution": {
+                "width": 320,
+                "height": 180
+            },
+            "physical_dimensions_inches": {
+                "height": 13.28,
+                "width": 23.62
+            }
+        }
+    ]
+    
+}

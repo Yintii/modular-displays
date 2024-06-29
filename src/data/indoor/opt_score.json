@@ -1,0 +1,96 @@
+{
+    "name": "Opt-Score [6-10mm]",
+    "value": "optScore",
+    "ruleset": {
+        "tileHorizontal": true,
+        "tileVertical": false,
+        "canSplitInHalf": false,
+        "seamless": true,
+        "borderOptional": false,
+        "minimum": 1,
+        "preset_1": false,
+        "preset_2": false,
+        "preset_3": false,
+        "preset_4": false
+    },
+    "variations": [
+        {
+            "id": 0,
+            "name": "6mm",
+            "pixel_pitch": 6,
+            "resolution": {
+                "height": 120,
+                "width": 360
+            },
+            "physical_dimensions_inches": {
+                "height": 44.13,
+                "width": 92.9
+            }
+        },
+        {
+            "id": 1,
+            "name": "6mm",
+            "pixel_pitch": 6,
+            "resolution": {
+                "height": 120,
+                "width": 440
+            },
+            "physical_dimensions_inches": {
+                "height": 44.13,
+                "width": 111.8
+            }
+        },
+        {
+            "id": 2,
+            "name": "6mm",
+            "pixel_pitch": 6,
+            "resolution": {
+                "height": 120,
+                "width": 560
+            },
+            "physical_dimensions_inches": {
+                "height": 44.13,
+                "width": 140.1
+            }
+        },
+        {
+            "id": 3,
+            "name": "10mm",
+            "pixel_pitch": 10,
+            "resolution": {
+                "height": 72,
+                "width": 216
+            },
+            "physical_dimensions_inches": {
+                "height": 44.13,
+                "width": 92.9
+            }
+        },
+        {
+            "id": 4,
+            "name": "10mm",
+            "pixel_pitch": 10,
+            "resolution": {
+                "height": 72,
+                "width": 288
+            },
+            "physical_dimensions_inches": {
+                "height": 44.13,
+                "width": 111.8
+            }
+        },
+        {
+            "id": 5,
+            "name": "10mm",
+            "pixel_pitch": 10,
+            "resolution": {
+                "height": 72,
+                "width": 336
+            },
+            "physical_dimensions_inches": {
+                "height": 44.13,
+                "width": 140.1
+            }
+        }
+    ]
+}

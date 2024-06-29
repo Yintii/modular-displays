@@ -1,0 +1,353 @@
+{
+    "name": "Infinity-RGB [10-25mm]",
+    "value": "infinityRGB",
+    "ruleset": {
+        "tileHorizontal": true,
+        "tileVertical": true,
+        "minimum": 2,
+        "preset_1": true,
+        "preset_2": true,
+        "preset_3": true,
+        "preset_4": true
+    },
+    "variations": [
+        {
+            "id": 0,
+            "name": "10mm",
+            "pixel_pitch": 10,
+            "resolution": {
+                "height": 72,
+                "width": 72
+            },
+            "physical_dimensions_inches": {
+                "height": 28.35,
+                "width": 28.35
+            }
+        },
+        {
+            "id": 1,
+            "name": "10mm",
+            "pixel_pitch": 10,
+            "resolution": {
+                "height": 72,
+                "width": 96
+            },
+            "physical_dimensions_inches": {
+                "height": 28.35,
+                "width": 37.8
+            }
+        },
+        {
+            "id": 2,
+            "name": "10mm",
+            "pixel_pitch": 10,
+            "resolution": {
+                "height": 96,
+                "width": 72
+            },
+            "physical_dimensions_inches": {
+                "height": 37.8,
+                "width": 28.35
+            }
+        },
+        {
+            "id": 3,
+            "name": "10mm",
+            "pixel_pitch": 10,
+            "resolution": {
+                "height": 96,
+                "width": 96
+            },
+            "physical_dimensions_inches": {
+                "height": 37.8,
+                "width": 37.8
+            }
+        },
+        {
+            "id": 4,
+            "name": "10mm",
+            "pixel_pitch": 10,
+            "resolution": {
+                "height": 120,
+                "width": 120
+            },
+            "physical_dimensions_inches": {
+                "height": 47.24,
+                "width": 47.24
+            }
+        },
+        {
+            "id": 5,
+            "name": "10mm",
+            "pixel_pitch": 10,
+            "resolution": {
+                "height": 120,
+                "width": 72
+            },
+            "physical_dimensions_inches": {
+                "height": 47.24,
+                "width": 28.35
+            }
+        },
+        {
+            "id": 5,
+            "name": "12mm",
+            "pixel_pitch": 12,
+            "resolution": {
+                "height": 60,
+                "width": 60
+            },
+            "physical_dimensions_inches": {
+                "height": 28.35,
+                "width": 28.35
+            }
+        },
+        {
+            "id": 6,
+            "name": "12mm",
+            "pixel_pitch": 12,
+            "resolution": {
+                "height": 60,
+                "width": 80
+            },
+            "physical_dimensions_inches": {
+                "height": 28.35,
+                "width": 37.8
+            }
+        },
+        {
+            "id": 7,
+            "name": "12mm",
+            "pixel_pitch": 12,
+            "resolution": {
+                "height": 80,
+                "width": 60
+            },
+            "physical_dimensions_inches": {
+                "height": 37.8,
+                "width": 28.35
+            }
+        },
+        {
+            "id": 8,
+            "name": "12mm",
+            "pixel_pitch": 12,
+            "resolution": {
+                "height": 80,
+                "width": 80
+            },
+            "physical_dimensions_inches": {
+                "height": 37.8,
+                "width": 37.8
+            }
+        },
+        {
+            "id": 9,
+            "name": "12mm",
+            "pixel_pitch": 12,
+            "resolution": {
+                "height": 100,
+                "width": 100
+            },
+            "physical_dimensions_inches": {
+                "height": 47.24,
+                "width": 47.24
+            }
+        },
+        {
+            "id": 10,
+            "name": "12mm",
+            "pixel_pitch": 12,
+            "resolution": {
+                "height": 100,
+                "width": 60
+            },
+            "physical_dimensions_inches": {
+                "height": 47.24,
+                "width": 28.35
+            }
+        },
+        {
+            "id": 11,
+            "name": "16mm",
+            "pixel_pitch": 16,
+            "resolution": {
+                "height": 45,
+                "width": 45
+            },
+            "physical_dimensions_inches": {
+                "height": 28.35,
+                "width": 28.35
+            }
+        },
+        {
+            "id": 12,
+            "name": "16mm",
+            "pixel_pitch": 16,
+            "resolution": {
+                "height": 45,
+                "width": 60
+            },
+            "physical_dimensions_inches": {
+                "height": 28.35,
+                "width": 37.8
+            }
+        },
+        {
+            "id": 13,
+            "name": "16mm",
+            "pixel_pitch": 16,
+            "resolution": {
+                "height": 60,
+                "width": 45
+            },
+            "physical_dimensions_inches": {
+                "height": 37.8,
+                "width": 28.35
+            }
+        },
+        {
+            "id": 14,
+            "name": "16mm",
+            "pixel_pitch": 16,
+            "resolution": {
+                "height": 60,
+                "width": 60
+            },
+            "physical_dimensions_inches": {
+                "height": 37.8,
+                "width": 37.8
+            }
+        },
+        {
+            "id": 15,
+            "name": "16mm",
+            "pixel_pitch": 16,
+            "resolution": {
+                "height": 75,
+                "width": 75
+            },
+            "physical_dimensions_inches": {
+                "height": 47.24,
+                "width": 47.24
+            }
+        },
+        {
+            "id": 16,
+            "name": "16mm",
+            "pixel_pitch": 16,
+            "resolution": {
+                "height": 75,
+                "width": 45
+            },
+            "physical_dimensions_inches": {
+                "height": 47.24,
+                "width": 28.35
+            }
+        },
+        {
+            "id": 17,
+            "name": "16mm",
+            "pixel_pitch": 16,
+            "resolution": {
+                "height": 75,
+                "width": 45
+            },
+            "physical_dimensions_inches": {
+                "height": 47.24,
+                "width": 28.35
+            }
+        },
+        {
+            "id": 18,
+            "name": "20mm",
+            "pixel_pitch": 20,
+            "resolution": {
+                "height": 36,
+                "width": 36
+            },
+            "physical_dimensions_inches": {
+                "height": 28.35,
+                "width": 28.35
+            }
+        },
+        {
+            "id": 19,
+            "name": "20mm",
+            "pixel_pitch": 20,
+            "resolution": {
+                "height": 36,
+                "width": 48
+            },
+            "physical_dimensions_inches": {
+                "height": 28.35,
+                "width": 37.8
+            }
+        },
+        {
+            "id": 20,
+            "name": "20mm",
+            "pixel_pitch": 20,
+            "resolution": {
+                "height": 48,
+                "width": 36
+            },
+            "physical_dimensions_inches": {
+                "height": 37.8,
+                "width": 28.35
+            }
+        },
+        {
+            "id": 21,
+            "name": "20mm",
+            "pixel_pitch": 20,
+            "resolution": {
+                "height": 48,
+                "width": 48
+            },
+            "physical_dimensions_inches": {
+                "height": 37.8,
+                "width": 37.8
+            }
+        },
+        {
+            "id": 22,
+            "name": "20mm",
+            "pixel_pitch": 20,
+            "resolution": {
+                "height": 60,
+                "width": 60
+            },
+            "physical_dimensions_inches": {
+                "height": 47.24,
+                "width": 47.24
+            }
+        },
+        {
+            "id": 23,
+            "name": "20mm",
+            "pixel_pitch": 20,
+            "resolution": {
+                "height": 60,
+                "width": 36
+            },
+            "physical_dimensions_inches": {
+                "height": 47.24,
+                "width": 28.35
+            }
+        },
+        {
+            "id": 24,
+            "name": "25mm",
+            "pixel_pitch": 25,
+            "resolution": {
+                "height": 32,
+                "width": 32
+            },
+            "physical_dimensions_inches": {
+                "height": 31.5,
+                "width": 31.5
+            }
+        }
+    ]
+}

@@ -1,0 +1,44 @@
+{
+    "name": "Opt-Poster [1.9-2.5mm]",
+    "value": "optPoster",
+    "ruleset": {
+        "tileHorizontal": true,
+        "tileVertical": true,
+        "canSplitInHalf": false,
+        "seamless": false,
+        "minimum": 1,
+        "borderOptional": false,
+        "preset_1": true,
+        "preset_2": true,
+        "preset_3": true,
+        "preset_4": true
+    },
+    "variations": [
+        {
+            "id": 0,
+            "name": "1.9mm",
+            "pixel_pitch": 1.9,
+            "resolution": {
+                "height": 1026,
+                "width": 305
+            },
+            "physical_dimensions_inches": {
+                "height": 77.3,
+                "width": 23.44
+            }
+        },
+        {
+            "id": 1,
+            "name": "2.5mm",
+            "pixel_pitch": 2.5,
+            "resolution": {
+                "height": 756,
+                "width": 224
+            },
+            "physical_dimensions_inches": {
+                "height": 77.3,
+                "width": 23.44
+            }
+        }
+    ]
+}

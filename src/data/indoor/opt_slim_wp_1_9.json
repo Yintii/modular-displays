@@ -1,0 +1,70 @@
+{
+    "name": "Opt-Slim WP 1.9mm",
+    "value": "opt_slim_wp_1_9",
+    "ruleset": {
+        "tileVertical": true,
+        "tileHorizontal": true,
+        "canSplitInHalf": false,
+        "seamless": true,
+        "borderOptional": false,
+        "minimum": 2,
+        "preset_1": true,
+        "preset_2": true,
+        "preset_3": true,
+        "preset_4": true
+    },
+    "variations": [
+        {
+            "id": 0,
+            "name": "1x2 1.9mm",
+            "pixel_pitch": 1.9,
+            "resolution": {
+                "height": 192,
+                "width": 384
+            },
+            "physical_dimensions_inches": {
+                "height": 9.84,
+                "width": 19.68
+            }
+        },
+        {
+            "id": 1,
+            "name": "1x3 1.9mm",
+            "pixel_pitch": 1.9,
+            "resolution": {
+                "height": 192,
+                "width": 576
+            },
+            "physical_dimensions_inches": {
+                "height": 9.84,
+                "width": 29.52
+            }
+        },
+        {
+            "id": 2,
+            "name": "1x4 1.9mm",
+            "pixel_pitch": 1.9,
+            "resolution": {
+                "height": 192,
+                "width": 768
+            },
+            "physical_dimensions_inches": {
+                "height": 9.84,
+                "width": 39.36
+            }
+        },
+        {
+            "id": 3,
+            "name": "1x5 1.9mm",
+            "pixel_pitch": 1.9,
+            "resolution": {
+                "height": 192,
+                "width": 960
+            },
+            "physical_dimensions_inches": {
+                "height": 9.84,
+                "width": 49.2
+            }
+        }
+    ]
+}

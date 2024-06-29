@@ -1,0 +1,44 @@
+{
+    "name": "Opt-Cool [2.5mm]",
+    "value": "optCool",
+    "ruleset": {
+        "tileHorizontal": true,
+        "tileVertical": false,
+        "canSplitInHalf": false,
+        "seamless": false,
+        "borderOptional": false,
+        "minimum": 1,
+        "preset_1": false,
+        "preset_2": false,
+        "preset_3": false,
+        "preset_4": false
+    },
+    "variations": [
+        {
+            "id": 0,
+            "name": "2.5mm",
+            "pixel_pitch": 2.5,
+            "resolution": {
+                "height": 192,
+                "width": 480
+            },
+            "physical_dimensions_inches": {
+                "height": 20.24,
+                "width": 47.24
+            }
+        },
+        {
+            "id": 1,
+            "name": "2.5mm",
+            "pixel_pitch": 2.5,
+            "resolution": {
+                "height": 192,
+                "width": 672
+            },
+            "physical_dimensions_inches": {
+                "height": 20.24,
+                "width": 66.14
+            }
+        }
+    ]
+}

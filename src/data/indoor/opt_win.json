@@ -1,0 +1,57 @@
+{
+    "name": "Opt-Win [2.5-4.8mm]",
+    "value": "optWin",
+    "ruleset": {
+        "tileHorizontal": true,
+        "tileVertical": true,
+        "canSplitInHalf": false,
+        "seamless": false,
+        "borderOptional": true,
+        "minimum": 1,
+        "preset_1": false,
+        "preset_2": false,
+        "preset_3": false,
+        "preset_4": false
+    },
+    "variations": [
+        {
+            "id": 0,
+            "name": "2.5mm",
+            "pixel_pitch": 2.5,
+            "resolution": {
+                "height": 480,
+                "width": 288
+            },
+            "physical_dimensions_inches": {
+                "height": 49.21,
+                "width": 30.31
+            }
+        },
+        {
+            "id": 1,
+            "name": "3.9mm",
+            "pixel_pitch": 3.9,
+            "resolution": {
+                "height": 256,
+                "width": 192
+            },
+            "physical_dimensions_inches": {
+                "height": 41.34,
+                "width": 31.49
+            }
+        },
+        {
+            "id": 2,
+            "name": "4.8mm",
+            "pixel_pitch": 4.8,
+            "resolution": {
+                "height": 208,
+                "width": 156
+            },
+            "physical_dimensions_inches": {
+                "height": 41.34,
+                "width": 31.49
+            }
+        }
+    ]
+}

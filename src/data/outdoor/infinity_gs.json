@@ -1,0 +1,171 @@
+{
+    "name": "Infinity-GS [16-25mm]",
+    "value": "infinityGS",
+    "ruleset": {
+        "tileHorizontal": true,
+        "tileVertical": true,
+        "minimum": 2,
+        "preset_1": false,
+        "preset_2": false,
+        "preset_3": false,
+        "preset_4": false
+    },
+    "variations": [
+        {
+            "id": 0,
+            "name": "16mm",
+            "pixel_pitch": 16,
+            "resolution": {
+                "height": 45,
+                "width": 45
+            },
+            "physical_dimensions_inches": {
+                "height": 28.35,
+                "width": 28.35
+            }
+        },
+        {
+            "id": 1,
+            "name": "16mm",
+            "pixel_pitch": 16,
+            "resolution": {
+                "height": 45,
+                "width": 60
+            },
+            "physical_dimensions_inches": {
+                "height": 28.35,
+                "width": 37.8
+            }
+        },
+        {
+            "id": 2,
+            "name": "16mm",
+            "pixel_pitch": 16,
+            "resolution": {
+                "height": 60,
+                "width": 45
+            },
+            "physical_dimensions_inches": {
+                "height": 28.35,
+                "width": 37.8
+            }
+        },
+        {
+            "id": 3,
+            "name": "16mm",
+            "pixel_pitch": 16,
+            "resolution": {
+                "height": 60,
+                "width": 60
+            },
+            "physical_dimensions_inches": {
+                "height": 37.8,
+                "width": 37.8
+            }
+        },
+        {
+            "id": 4,
+            "name": "20mm",
+            "pixel_pitch": 20,
+            "resolution": {
+                "height": 36,
+                "width": 36
+            },
+            "physical_dimensions_inches": {
+                "height": 28.35,
+                "width": 28.35
+            }
+        },
+        {
+            "id": 5,
+            "name": "20mm",
+            "pixel_pitch": 20,
+            "resolution": {
+                "height": 36,
+                "width": 48
+            },
+            "physical_dimensions_inches": {
+                "height": 28.35,
+                "width": 37.8
+            }
+        },
+        {
+            "id": 6,
+            "name": "20mm",
+            "pixel_pitch": 20,
+            "resolution": {
+                "height": 48,
+                "width": 36
+            },
+            "physical_dimensions_inches": {
+                "height": 37.8,
+                "width": 28.35
+            }
+        },
+        {
+            "id": 7,
+            "name": "20mm",
+            "pixel_pitch": 20,
+            "resolution": {
+                "height": 48,
+                "width": 48
+            },
+            "physical_dimensions_inches": {
+                "height": 37.8,
+                "width": 37.8
+            }
+        },
+        {
+            "id": 8,
+            "name": "25mm",
+            "pixel_pitch": 25,
+            "resolution": {
+                "height": 24,
+                "width": 32
+            },
+            "physical_dimensions_inches": {
+                "height": 23.06,
+                "width": 31.5
+            }
+        },
+        {
+            "id": 9,
+            "name": "25mm",
+            "pixel_pitch": 25,
+            "resolution": {
+                "height": 24,
+                "width": 48
+            },
+            "physical_dimensions_inches": {
+                "height": 23.06,
+                "width": 47.24
+            }
+        },
+        {
+            "id": 10,
+            "name": "25mm",
+            "pixel_pitch": 25,
+            "resolution": {
+                "height": 32,
+                "width": 32
+            },
+            "physical_dimensions_inches": {
+                "height": 31.5,
+                "width": 31.5
+            }
+        },
+        {
+            "id": 11,
+            "name": "25mm",
+            "pixel_pitch": 25,
+            "resolution": {
+                "height": 32,
+                "width": 48
+            },
+            "physical_dimensions_inches": {
+                "height": 31.5,
+                "width": 47.27
+            }
+        }
+    ]
+}

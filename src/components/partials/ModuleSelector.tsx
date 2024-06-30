@@ -1,100 +1,40 @@
-import { useEffect } from 'react';
-//outdoor modules
-import IM2 from '../../data/outdoor/intelligent_m2.json'
-import ISMD from '../../data/outdoor/infinity_smd.json'
-import IRGB from '../../data/outdoor/infinity_rgb.json'
-import IGS from '../../data/outdoor/infinity_gs.json'
-import ESMD from '../../data/outdoor/envision_smd.json'
-import IOSMD from '../../data/outdoor/infinity_one_smd.json'
-//indoor modules
-import OP1 from '../../data/indoor/opt_panel_1.json'
-import OP2 from '../../data/indoor/opt_panel_2.json'
-import OS from '../../data/indoor/opt_slim.json'
-import OSWP19 from '../../data/indoor/opt_slim_wp_1_9.json'
-import OSWP25 from '../../data/indoor/opt_slim_wp_2_5.json'
-import OSWP26 from '../../data/indoor/opt_slim_wp_2_6.json'
-import OSWP39 from '../../data/indoor/opt_slim_wp_3_9.json'
-import OSWP48 from '../../data/indoor/opt_slim_wp_4_8.json'
-import OP from '../../data/indoor/opt_poster.json'
-import OTV from '../../data/indoor/opt_tv.json'
-import OWIN from '../../data/indoor/opt_win.json'
-import OCOOL from '../../data/indoor/opt_cool.json'
-import OSCORE from '../../data/indoor/opt_score.json'
-
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../../state/store';
-
 import { setModule, setModuleVariation } from '../../state/moduleMenu/moduleMenuSlice';
 
 const ModuleSelector = () => {
-
-        //these first two are just for rendering the options as a whole
-    const indoorModules = [
-        { name: OP2.name, data: OP2 },
-        { name: OS.name, data: OS },
-        { name: OSWP19.name, data: OSWP19 },
-        { name: OSWP25.name, data: OSWP25 },
-        { name: OSWP26.name, data: OSWP26 },
-        { name: OSWP39.name, data: OSWP39 },
-        { name: OSWP48.name, data: OSWP48 },
-        { name: OP1.name,    data: OP1 },
-        { name: OP.name,     data: OP },
-        { name: OTV.name,    data: OTV },
-        { name: OWIN.name,   data: OWIN },
-        { name: OCOOL.name,  data: OCOOL },
-        { name: OSCORE.name, data: OSCORE }
-
-    ]
-    const outdoorModules = [
-        { name: IM2.name, data: IM2 },
-        { name: ISMD.name, data: ISMD },
-        { name: IRGB.name, data: IRGB },
-        { name: IGS.name, data: IGS },
-        { name: ESMD.name, data: ESMD },
-        { name: IOSMD.name, data: IOSMD }
-    ]
-
-    // const optSlimReg = { name: OS.name, data: OS };
-
-    // //these are classifying arrays, used to determine which renderer to use
-    // const regularModules = {
-    //     indoor: [
-    //         { name: OP1.name, data: OP1 },
-    //         { name: OP2.name, data: OP2 },
-    //         { name: IOSMD.name, data: IOSMD },
-    //         { name: OP.name, data: OP },
-    //         { name: OWIN.name, data: OWIN }
-    //     ],
-    //     //outdoor regulars have the appendage logic
-    //     outdoor: [
-    //         { name: IM2.name, data: IM2 },
-    //         { name: ISMD.name, data: ISMD },
-    //         { name: IRGB.name, data: IRGB },
-    //         { name: IGS.name, data: IGS },
-    //         { name: ESMD.name, data: ESMD }
-    //     ]
-    // }
-
-    // const wpModules = [
-    //     { name: 'Opt-Slim WP 1.9mm', data: OSWP19 },
-    //     { name: 'Opt-Slim WP 2.5mm', data: OSWP25 },
-    //     { name: 'Opt-Slim WP 2.6mm', data: OSWP26 },
-    //     { name: 'Opt-Slim WP 3.9mm', data: OSWP39 },
-    //     { name: 'Opt-Slim WP 4.8mm', data: OSWP48 }
-    // ]
-    // const horizontalModules = [
-    //     //all these happen to be indoor modules
-    //     { name: OTV.name, data: OTV },
-    //     { name: OCOOL.name, data: OCOOL },
-    //     { name: OSCORE.name, data: OSCORE }
-    // ];
-
-
-
+    
     const dispatch = useDispatch();
-    const indoorOutdoor = useSelector((state: RootState) => state.moduleMenu.indoorOutdoor);
-    const module = useSelector((state: RootState) => state.moduleMenu.module);
-    //const moduleVariation = useSelector((state: RootState) => state.menu.moduleVariation);
+
+    const indoorOutdoor  = useSelector((state: RootState) => state.moduleMenu.indoorOutdoor);
+    const module         = useSelector((state: RootState) => state.moduleMenu.module);
+    
+    const indoorModules     = useSelector((state: RootState) => state.moduleMenu.indoorModules);    
+    const outdoorModules    = useSelector((state: RootState) => state.moduleMenu.outdoorModules);
+    // const regularModules    = useSelector((state: RootState) => state.moduleMenu.regularModules);
+    // const wpModules         = useSelector((state: RootState) => state.moduleMenu.wpModules);
+    // const horizontalModules = useSelector((state: RootState) => state.moduleMenu.horizontalModules);
+    // const optSlimReg        = useSelector((state: RootState) => state.moduleMenu.optSlimReg);
+    
+    const IM2    = useSelector((state: RootState) => state.moduleMenu.IM2);
+    const ISMD   = useSelector((state: RootState) => state.moduleMenu.ISMD);
+    const IRGB   = useSelector((state: RootState) => state.moduleMenu.IRGB);
+    const IGS    = useSelector((state: RootState) => state.moduleMenu.IGS);
+    const ESMD   = useSelector((state: RootState) => state.moduleMenu.ESMD);
+    const IOSMD  = useSelector((state: RootState) => state.moduleMenu.IOSMD);
+    const OP1    = useSelector((state: RootState) => state.moduleMenu.OP1);
+    const OP2    = useSelector((state: RootState) => state.moduleMenu.OP2);
+    const OS     = useSelector((state: RootState) => state.moduleMenu.OS);
+    const OSWP19 = useSelector((state: RootState) => state.moduleMenu.OSWP19);
+    const OSWP25 = useSelector((state: RootState) => state.moduleMenu.OSWP25);
+    const OSWP26 = useSelector((state: RootState) => state.moduleMenu.OSWP26);
+    const OSWP39 = useSelector((state: RootState) => state.moduleMenu.OSWP39);
+    const OSWP48 = useSelector((state: RootState) => state.moduleMenu.OSWP48);
+    const OP     = useSelector((state: RootState) => state.moduleMenu.OP);
+    const OTV    = useSelector((state: RootState) => state.moduleMenu.OTV);
+    const OWIN   = useSelector((state: RootState) => state.moduleMenu.OWIN);
+    const OCOOL  = useSelector((state: RootState) => state.moduleMenu.OCOOL);
+    const OSCORE = useSelector((state: RootState) => state.moduleMenu.OSCORE);
 
     const handleSetModule = (module: string) => {
         switch (module) {
@@ -134,6 +74,27 @@ const ModuleSelector = () => {
             case OCOOL.value:
                 dispatch(setModule(OCOOL));
                 break;
+            case OSCORE.value:
+                dispatch(setModule(OSCORE));
+                break;
+            case IM2.value:
+                dispatch(setModule(IM2));
+                break;
+            case ISMD.value:
+                dispatch(setModule(ISMD));
+                break;
+            case IRGB.value:
+                dispatch(setModule(IRGB));
+                break;
+            case IGS.value:
+                dispatch(setModule(IGS));
+                break;
+            case ESMD.value:
+                dispatch(setModule(ESMD));
+                break;
+            case IOSMD.value:
+                dispatch(setModule(IOSMD));
+                break;
         }
     }   
 
@@ -171,7 +132,7 @@ const ModuleSelector = () => {
                     <option value="" disabled selected>Choose a variation</option>
                     {module?.variations?.map((variation, index) => {
                         return (
-                            <option key={index} value={variation.id}>{variation.name}</option>
+                            <option key={index} value={variation.name}>{variation.name}</option>
                         )
                     })}
                 </select>

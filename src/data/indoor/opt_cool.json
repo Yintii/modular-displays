@@ -2,12 +2,12 @@
     "name": "Opt-Cool [2.5mm]",
     "value": "optCool",
     "ruleset": {
+        "minimum": 1,
         "tileHorizontal": true,
         "tileVertical": false,
         "canSplitInHalf": false,
         "seamless": false,
         "borderOptional": false,
-        "minimum": 1,
         "preset_1": false,
         "preset_2": false,
         "preset_3": false,

@@ -20,71 +20,52 @@ const PresetRenderer = () => {
     dispatch(setPreset(preset));
   }
 
-  function processPreset(
-    resolutionWidth: number, 
-    resolutionHeight: number,
-  ) {
-    let width_mods = 0;
-    let height_mods = 0;
-    let width = 0;
-    let height = 0;
-    let final_width = 0;
-    let final_height = 0;
-
-    for (let i = 0; i < resolutionWidth; i += moduleVariation.resolution.width) {
-      width_mods++;
-    }
-    for (let i = 0; i < resolutionHeight; i += moduleVariation.resolution.height) {
-      height_mods++;
-    }
-
-    width = width_mods * moduleVariation.physical_dimensions_inches.width * inch;
-    height = height_mods * moduleVariation.physical_dimensions_inches.height * inch;
-
-    final_width = roundToFixedUp(width / foot, 2);
-    final_height = roundToFixedUp(height / foot, 2);
-
-    dispatch(adjustDisplayWidth(final_width));
-    dispatch(adjustDisplayHeight(final_height));
-  }
-
   useEffect(() => {
+    const processPreset = ( resolutionWidth: number, resolutionHeight: number) => {
+      let width_mods = 0;
+      let height_mods = 0;
 
+      for (let i = 0; i < resolutionWidth; i += moduleVariation.resolution.width) {
+        width_mods++;
+      }
+      for (let i = 0; i < resolutionHeight; i += moduleVariation.resolution.height) {
+        height_mods++;
+      }
 
+      const width = width_mods * moduleVariation.physical_dimensions_inches.width * inch;
+      const height = height_mods * moduleVariation.physical_dimensions_inches.height * inch;
+
+      const final_width = roundToFixedUp(width / foot, 2);
+      const final_height = roundToFixedUp(height / foot, 2);
+
+      dispatch(adjustDisplayWidth(final_width));
+      dispatch(adjustDisplayHeight(final_height));
+    }
     switch(preset){
       case ('standard'):
-        console.log("Module Variation: ", moduleVariation);
         processPreset(1920, 1080);
         break;
       case ('2k'):
-        console.log("Module Variation: ", moduleVariation);
         processPreset(2048, 1080);
         break;
       case ('4k'):
-        console.log("Module Variation: ", moduleVariation);
         processPreset(3840, 2160);
         break;
       case ('8k'):
-        console.log("Module Variation: ", moduleVariation);
         processPreset(7680, 4320);
         break;
       case ('bb1'):
-        console.log("Module Variation: ", moduleVariation);
         processPreset(300, 1200);
         break; 
       case ('bb2'):
-        console.log("Module Variation: ", moduleVariation);
         processPreset(450, 1200);
         break;
       case ('bb3'):
-        console.log("Module Variation: ", moduleVariation);
         processPreset(420, 1440);
         break;
       default:
         console.log('Unrecognized preset');
     }
-
-
   }, [preset, moduleVariation, dispatch])
 
 

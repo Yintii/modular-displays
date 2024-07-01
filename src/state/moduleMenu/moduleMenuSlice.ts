@@ -91,7 +91,10 @@ interface ModuleMenuState {
     moduleVariation: Variation;
     indoorModules: { name: string; data: Module }[];
     outdoorModules: { name: string; data: Module }[];
-    regularModules: { indoor: { name: string; data: Module }[], outdoor: { name: string; data: Module }[] };
+    regularModules: { 
+        indoor: { name: string; data: Module }[], 
+        outdoor: { name: string; data: Module }[] 
+    };
     wpModules: { name: string; data: Module }[];
     horizontalModules: { name: string; data: Module }[];
     optSlimReg: { name: string; data: Module };

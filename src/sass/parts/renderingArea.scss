@@ -1,0 +1,38 @@
+#renderingArea{
+  position:relative;
+  height:100vh;
+  bottom:0;
+  left:0;
+  right:0;
+  
+  img{
+        position:absolute;
+        bottom:82px;
+        transform-origin: bottom right;
+    }
+
+    .rendering-area, #fixed-wall{
+        position:absolute;
+        transform-origin: top left;
+        box-sizing: border-box;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    #fixed-wall{
+        background-color: rgba(0,0,0,0.5);
+    }
+
+
+    .mod-wrapper{
+        display:inline-flex;
+        justify-content: center;
+    }
+
+    .module{
+        box-sizing: border-box;
+        background-color: rgba(255, 255, 255, 0.5);
+    }
+
+}

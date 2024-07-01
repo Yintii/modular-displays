@@ -3,10 +3,10 @@ import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../state/store';
 import ModuleMenu from './partials/ModuleMenu';
 import { 
-    adjustWallHeight,
-    adjustWallWidth,
-    adjustDisplayHeight,
-    adjustDisplayWidth
+    setWallHeight,
+    setWallWidth,
+    setDisplayHeight,
+    setDisplayWidth
 } from '../state/menu/menuSlice';
 
 const MenuComponent = () => {
@@ -19,19 +19,19 @@ const MenuComponent = () => {
     const displayWidth = useSelector((state: RootState) => state.menu.displayDimensions.width);
 
     const handleWallHeightChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-      dispatch(adjustWallHeight(event.target.value));
+      dispatch(setWallHeight(Number(event.target.value)));
     }
 
     const handleWallWidthChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        dispatch(adjustWallWidth(event.target.value));
+        dispatch(setWallWidth(Number(event.target.value)));
     }
 
     const handleDisplayHeightChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        dispatch(adjustDisplayHeight(event.target.value));
+        dispatch(setDisplayHeight(Number(event.target.value)));
     }
 
     const handleDisplayWidthChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        dispatch(adjustDisplayWidth(event.target.value));
+        dispatch(setDisplayWidth(Number(event.target.value)));
     }
 
 

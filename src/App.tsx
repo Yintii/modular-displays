@@ -7,8 +7,8 @@ function App() {
 
   const module = useSelector((state: RootState) => state.moduleMenu.module);
   const moduleVariation = useSelector((state: RootState) => state.moduleMenu.moduleVariation);
-
   const displayDimensions = useSelector((state: RootState) => state.menu.displayDimensions);
+  
 
   const InfoBar = () => {
     if(module && moduleVariation && moduleVariation.resolution) {

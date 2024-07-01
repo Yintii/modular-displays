@@ -9,6 +9,11 @@ interface MenuState {
   wallDimensions: twoDimensional;
   displayDimensions: twoDimensional;
   displayResolution: twoDimensional;
+  innerDimensions: twoDimensional;
+  displayMargins: twoDimensional;
+  totalModules: number;
+  overallScale: number | null;
+  fixedWallScale: number | null;
 }
 
 
@@ -24,37 +29,60 @@ const initialState: MenuState = {
     displayResolution: {
         width: 0,
         height: 0,
-    }
+    },
+    innerDimensions: {
+        height: 0,
+        width: 0,
+    },
+    displayMargins: {
+        height: 0,
+        width: 0,
+    },
+    totalModules: 0,
+    overallScale: 100,
+    fixedWallScale: 100,
 };
 
 const menuSlice = createSlice({
     name: 'menu',
     initialState,
     reducers: {
-        adjustWallHeight: (state, action: PayloadAction<number>) => {
+        setWallHeight: (state, action: PayloadAction<number>) => {
             state.wallDimensions.height = action.payload;
         },
-        adjustWallWidth: (state, action: PayloadAction<number>) => {
+        setWallWidth: (state, action: PayloadAction<number>) => {
             state.wallDimensions.width = action.payload;
         },
-        adjustDisplayHeight: (state, action: PayloadAction<number>) => {
+        setDisplayHeight: (state, action: PayloadAction<number>) => {
             state.displayDimensions.height = action.payload;
         },
-        adjustDisplayWidth: (state, action: PayloadAction<number>) => {
+        setDisplayWidth: (state, action: PayloadAction<number>) => {
             state.displayDimensions.width = action.payload;
         },
-        adjustDisplayResolution: (state, action: PayloadAction<twoDimensional>) => {
+        setDisplayResolution: (state, action: PayloadAction<twoDimensional>) => {
             state.displayResolution = action.payload;
         },
+        setInnerDimensions: (state, action: PayloadAction<twoDimensional>) => {
+            state.innerDimensions = action.payload;
+        },
+        setDisplayMargins: (state, action: PayloadAction<twoDimensional>) => {
+            state.displayMargins = action.payload;
+        },
+        setTotalModules: (state, action: PayloadAction<number>) => {
+            state.totalModules = action.payload;
+        }
     },
 })
 
 export const { 
-    adjustWallHeight,
-    adjustWallWidth,
-    adjustDisplayHeight,
-    adjustDisplayWidth,
-    adjustDisplayResolution
+    setWallHeight,
+    setWallWidth,
+    setDisplayHeight,
+    setDisplayWidth,
+    setDisplayResolution,
+    setInnerDimensions,
+    setDisplayMargins,
+    setTotalModules
 } = menuSlice.actions;
 
 export default menuSlice.reducer;

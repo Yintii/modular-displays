@@ -89,6 +89,7 @@ interface ModuleMenuState {
     indoorOutdoor: string;
     module: Module;
     moduleVariation: Variation;
+    moduleFactor: number;
     indoorModules: { name: string; data: Module }[];
     outdoorModules: { name: string; data: Module }[];
     regularModules: { 
@@ -160,6 +161,7 @@ const initialState: ModuleMenuState = {
     indoorOutdoor: 'indoor',
     module: <Module>{},
     moduleVariation: <Variation>{},
+    moduleFactor: 0,
     indoorModules: indoorModules,
     outdoorModules: outdoorModules,
     regularModules: regularModules,
@@ -204,6 +206,8 @@ const moduleMenuSlice = createSlice({
             const variation = state.module.variations.find((variation: Variation) => variation.name === action.payload);
             if(!variation) return;
             state.moduleVariation = variation;
+            state.moduleFactor = (state.moduleVariation.physical_dimensions_inches.width / state.moduleVariation.physical_dimensions_inches.height);
+
         },
         setPreset: (state, action: PayloadAction<string>) => {
             console.log('Setting preset: ', action.payload);

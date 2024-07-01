@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../../state/store';
 import { roundToFixedUp } from '../../lib/helpers';
-import { adjustDisplayHeight, adjustDisplayWidth } from '../../state/menu/menuSlice';
+import { setDisplayHeight, setDisplayWidth } from '../../state/menu/menuSlice';
 import { setPreset } from '../../state/moduleMenu/moduleMenuSlice';
 const PresetRenderer = () => {
 
@@ -21,6 +21,7 @@ const PresetRenderer = () => {
   }
 
   useEffect(() => {
+
     const processPreset = ( resolutionWidth: number, resolutionHeight: number) => {
       let width_mods = 0;
       let height_mods = 0;
@@ -38,9 +39,15 @@ const PresetRenderer = () => {
       const final_width = roundToFixedUp(width / foot, 2);
       const final_height = roundToFixedUp(height / foot, 2);
 
-      dispatch(adjustDisplayWidth(final_width));
-      dispatch(adjustDisplayHeight(final_height));
+      dispatch(setDisplayWidth(final_width));
+      dispatch(setDisplayHeight(final_height));
     }
+
+    const processPresetBySize = (width_feet: number, height_feet: number) => {
+      dispatch(setDisplayHeight(height_feet));
+      dispatch(setDisplayWidth(width_feet));
+    }
+
     switch(preset){
       case ('standard'):
         processPreset(1920, 1080);
@@ -55,13 +62,13 @@ const PresetRenderer = () => {
         processPreset(7680, 4320);
         break;
       case ('bb1'):
-        processPreset(300, 1200);
+        processPresetBySize(40, 10);
         break; 
       case ('bb2'):
-        processPreset(450, 1200);
+        processPresetBySize(40, 10.5);
         break;
       case ('bb3'):
-        processPreset(420, 1440);
+        processPresetBySize(45, 14);
         break;
       default:
         console.log('Unrecognized preset');

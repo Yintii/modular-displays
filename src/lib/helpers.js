@@ -23,16 +23,19 @@ export function scaleArea(
     module_area,
     fixed_wall,
     displayDimensions,
-    setOverallScale
+    setOverallScale,
+    dispatch,
 ){
+    if(module_area == null) return
+
+    console.log("Scaling area...");
 
     let bounds;
-
     if (type == 'display') {
-        bounds = module_area.current.getBoundingClientRect();
+        bounds = module_area;
     } else {
-        if (fixed_wall.current == null) return;
-        bounds = fixed_wall.current.getBoundingClientRect();
+        if (fixed_wall == null) return;å
+        bounds = fixed_wall;
     }
 
     //create as sudo bounds object where the right and bottom values are scaled up by 5%
@@ -49,14 +52,14 @@ export function scaleArea(
 
         if (max_width <= displayDimensions.width * 30 || max_height <= displayDimensions.height * 30 && currentScale != 5) {
             console.log('scaling up...');
-            setOverallScale(currentScale - 5);
+            dispatch(setOverallScale(currentScale - 5));
         }
     } else if (currentScale != 100 && bounds.right <= window.innerWidth && bounds.bottom <= window.innerHeight) {
         if (checkModulesBoundsTooLarge(scaledBounds)) {
             return
         } else {
             console.log('scaling down...');
-            setOverallScale(currentScale + 2.5);
+            dispatch(setOverallScale(currentScale + 2.5));
         }
     }
 

@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../../state/store';
 import { roundToFixedUp } from '../../lib/helpers';
-import { setDisplayHeight, setDisplayWidth } from '../../state/menu/menuSlice';
+import { setDisplayHeight, setDisplayWidth, setTotalModules } from '../../state/menu/menuSlice';
 import { setPreset } from '../../state/moduleMenu/moduleMenuSlice';
 const PresetRenderer = () => {
 
@@ -33,6 +33,8 @@ const PresetRenderer = () => {
         height_mods++;
       }
 
+      dispatch(setTotalModules(width_mods * height_mods));
+
       const width = width_mods * moduleVariation.physical_dimensions_inches.width * inch;
       const height = height_mods * moduleVariation.physical_dimensions_inches.height * inch;
 
@@ -44,6 +46,10 @@ const PresetRenderer = () => {
     }
 
     const processPresetBySize = (width_feet: number, height_feet: number) => {
+      const width_mods = width_feet / moduleVariation.physical_dimensions_inches.width * inch;
+      const height_mods = height_feet / moduleVariation.physical_dimensions_inches.height * inch;
+
+      dispatch(setTotalModules(width_mods * height_mods));
       dispatch(setDisplayHeight(height_feet));
       dispatch(setDisplayWidth(width_feet));
     }

@@ -34,9 +34,6 @@ const MenuComponent = () => {
         dispatch(setDisplayWidth(Number(event.target.value)));
     }
 
-
-
-
   return (
     <div id="menu">
         <div id="menu-header">

@@ -70,6 +70,9 @@ const menuSlice = createSlice({
         },
         setTotalModules: (state, action: PayloadAction<number>) => {
             state.totalModules = action.payload;
+        },
+        setOverallScale: (state, action: PayloadAction<number>) => {
+            state.overallScale = action.payload;
         }
     },
 })
@@ -82,7 +85,8 @@ export const {
     setDisplayResolution,
     setInnerDimensions,
     setDisplayMargins,
-    setTotalModules
+    setTotalModules,
+    setOverallScale
 } = menuSlice.actions;
 
 export default menuSlice.reducer;

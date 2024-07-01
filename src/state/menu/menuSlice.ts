@@ -1,17 +1,16 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
-interface MenuState {  
-  wallDimensions: {
+interface twoDimensional {
     height: number;
     width: number;
-  };
-  
-  displayDimensions: {
-    height: number;
-    width: number;
-  };
-
 }
+
+interface MenuState {  
+  wallDimensions: twoDimensional;
+  displayDimensions: twoDimensional;
+  displayResolution: twoDimensional;
+}
+
 
 const initialState: MenuState = {
     wallDimensions: {
@@ -22,6 +21,10 @@ const initialState: MenuState = {
         height: 0,
         width: 0,
     },
+    displayResolution: {
+        width: 0,
+        height: 0,
+    }
 };
 
 const menuSlice = createSlice({
@@ -39,7 +42,10 @@ const menuSlice = createSlice({
         },
         adjustDisplayWidth: (state, action: PayloadAction<number>) => {
             state.displayDimensions.width = action.payload;
-        }
+        },
+        adjustDisplayResolution: (state, action: PayloadAction<twoDimensional>) => {
+            state.displayResolution = action.payload;
+        },
     },
 })
 
@@ -48,6 +54,7 @@ export const {
     adjustWallWidth,
     adjustDisplayHeight,
     adjustDisplayWidth,
+    adjustDisplayResolution
 } = menuSlice.actions;
 
 export default menuSlice.reducer;

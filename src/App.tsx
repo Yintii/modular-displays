@@ -16,6 +16,7 @@ function App() {
   const module = useSelector((state: RootState) => state.moduleMenu.module);
   const moduleVariation = useSelector((state: RootState) => state.moduleMenu.moduleVariation);
   const displayDimensions = useSelector((state: RootState) => state.menu.displayDimensions);
+  const displayResolution = useSelector((state: RootState) => state.menu.displayResolution);
   const fixedWallDimensions = useSelector((state: RootState) => state.menu.wallDimensions);
   const innerDimensions = useSelector((state: RootState) => state.menu.innerDimensions);
   const totalModules = useSelector((state: RootState) => state.menu.totalModules);
@@ -34,7 +35,7 @@ function App() {
           <p>Variation: {moduleVariation.name}</p>
           <p>Display Height: ~{displayDimensions.height}</p>
           <p>Display Width: ~{displayDimensions.width}</p>
-          <p>Resolution: {moduleVariation.resolution.width} x {moduleVariation.resolution.height}</p>
+          <p>Resolution: {displayResolution.width} x {displayResolution.height}</p>
           <p>Total Modules: {totalModules}</p>
         </div>
       );

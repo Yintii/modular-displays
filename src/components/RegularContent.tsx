@@ -4,7 +4,11 @@ import { useSelector, useDispatch } from 'react-redux';
 import { setInnerDimensions, setDisplayMargins, setDisplayResolution, setTotalModules } from '../state/menu/menuSlice';
 import RegularRenderingArea from './RegularRenderingArea';
 
-const RegularContent = () => {
+interface DisplayProps {
+    regular_module_area: React.RefObject<HTMLDivElement>;
+}
+
+const RegularContent = (props: DisplayProps) => {
 
     const dispatch = useDispatch();
 
@@ -67,7 +71,7 @@ const RegularContent = () => {
   }, [moduleVariation, displayDimensions, dispatch]);
 
   return (
-    <RegularRenderingArea />
+    <RegularRenderingArea regular_module_area={props.regular_module_area} />
   )
 }
 

@@ -40,7 +40,7 @@ const initialState: MenuState = {
     },
     totalModules: 0,
     overallScale: 100,
-    fixedWallScale: 100,
+    fixedWallScale: null,
 };
 
 const menuSlice = createSlice({
@@ -72,6 +72,7 @@ const menuSlice = createSlice({
             state.totalModules = action.payload;
         },
         setOverallScale: (state, action: PayloadAction<number>) => {
+            console.log("Setting overall scale: ", action.payload)
             state.overallScale = action.payload;
         }
     },

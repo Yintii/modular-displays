@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import MenuComponent from './components/MenuComponent'
 import Display from './components/Display'
 import { RootState } from './state/store';
@@ -6,7 +6,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import { setOverallScale } from './state/menu/menuSlice';
 import { 
 	scaleArea,
-  roundToFixedUp,
 } from './lib/helpers';
 
 
@@ -22,12 +21,10 @@ function App() {
   const totalModules = useSelector((state: RootState) => state.menu.totalModules);
   const renderer = useSelector((state: RootState) => state.moduleMenu.renderer);
   const overallScale = useSelector((state: RootState) => state.menu.overallScale);
+
+  const regular_module_area = useRef<HTMLDivElement>(null);
+  const fixed_wall = useRef<HTMLDivElement>(null);
   
-  const regular_module_area = document.getElementById('regular-module-area')?.getBoundingClientRect();
-  const horizontal_area = document.getElementById('horizontal-area')?.getBoundingClientRect();
-  const wp_area = document.getElementById('wp-area')?.getBoundingClientRect();
-  const opt_slim_reg_area = document.getElementById('opt-slim-reg-area')?.getBoundingClientRect();
-  const fixed_wall = document.getElementById('fixed-wall')?.getBoundingClientRect();
 
   const InfoBar = () => {
     if(module && moduleVariation && moduleVariation.resolution) {
@@ -62,13 +59,14 @@ function App() {
     //if(Number(fixedWallDimensions.width) > 0 && Number(fixedWallDimensions.height) > 0) return;
       if(renderer === 'regular'){
         scaleArea('display', overallScale, regular_module_area, fixed_wall, displayDimensions, setOverallScale, dispatch);
-      }else if(renderer === 'horizontal'){
-        scaleArea('display', overallScale, horizontal_area, fixed_wall, displayDimensions, setOverallScale, dispatch);
-      } else if(renderer === 'wp'){
-        scaleArea('display', overallScale, wp_area, fixed_wall, displayDimensions, setOverallScale, dispatch);
-      } else if(renderer === 'opt_slim_reg'){
-        scaleArea('display', overallScale, opt_slim_reg_area, fixed_wall, displayDimensions, setOverallScale, dispatch);
       }
+      //else if(renderer === 'horizontal'){
+      //   scaleArea('display', overallScale, horizontal_area, fixed_wall, displayDimensions, setOverallScale, dispatch);
+      // } else if(renderer === 'wp'){
+      //   scaleArea('display', overallScale, wp_area, fixed_wall, displayDimensions, setOverallScale, dispatch);
+      // } else if(renderer === 'opt_slim_reg'){
+      //   scaleArea('display', overallScale, opt_slim_reg_area, fixed_wall, displayDimensions, setOverallScale, dispatch);
+      // }
     }, [displayDimensions, overallScale, fixedWallDimensions, renderer]);
 
   //   useEffect(() => {
@@ -93,7 +91,7 @@ function App() {
     }else{
       renderingArea.style.backgroundColor = 'rgba(255, 255, 255, 1)';
     }
-    }, [displayDimensions, fixedWallDimensions,innerDimensions])
+    }, [displayDimensions, fixedWallDimensions, innerDimensions, regular_module_area])
 
     //implement the logic for the fixed wall dimensions
     // useEffect(() => {
@@ -128,7 +126,7 @@ function App() {
         <InfoBar />
         {module.name && moduleVariation.name && displayDimensions.height !== 0 && displayDimensions.width !== 0 && (
           <div id="renderingArea">
-            <Display />
+            <Display regular_module_area={regular_module_area} />
           </div>
         )}
 

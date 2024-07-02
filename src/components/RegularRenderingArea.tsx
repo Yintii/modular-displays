@@ -2,8 +2,11 @@ import { useSelector } from 'react-redux';
 import { RootState } from '../state/store';
 import GeneratedModules from './partials/GeneratedModules';
 
+interface DisplayProps {
+    regular_module_area: React.RefObject<HTMLDivElement>;
+}
 
-const RegularRenderingArea = () => {
+const RegularRenderingArea = (props: DisplayProps) => {
   
     const displayDimensions = useSelector((state: RootState) => state.menu.displayDimensions);
     const moduleVariation = useSelector((state: RootState) => state.moduleMenu.moduleVariation);
@@ -13,10 +16,12 @@ const RegularRenderingArea = () => {
     const fixedWallScale = useSelector((state: RootState) => state.menu.fixedWallScale);
 
     const foot = 30;
-    
+
+    console.log("Rendering ref: ", props.regular_module_area.current)
+
   return (
     <div
-        id="regular-rendering-area"
+        ref={props.regular_module_area}
         className="rendering-area"
         style={{
             width:  `${displayDimensions.width * foot + 2}px`,

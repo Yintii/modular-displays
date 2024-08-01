@@ -40,7 +40,7 @@ const initialState: MenuState = {
     },
     totalModules: 0,
     overallScale: 100,
-    fixedWallScale: 100,
+    fixedWallScale: null,
 };
 
 const menuSlice = createSlice({

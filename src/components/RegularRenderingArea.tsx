@@ -28,7 +28,7 @@ const RegularRenderingArea = (props: DisplayProps) => {
             height: `${displayDimensions.height * foot + 2}px`,
             border: 'dashed grey 1px',
             scale: `${fixedWallScale ? 100 : overallScale}%`,
-            top: `${fixedWallScale ? '' : '45%'}`
+            top: `${fixedWallScale ? '' : '50%'}`
         }}
     >
         <div 

@@ -84,10 +84,10 @@ function App() {
       // }
     }, [displayDimensions, overallScale, fixedWallDimensions, renderer]);
 
-     useEffect(() => {
+  useEffect(() => {
      if(renderer === 'regular'){
        scaleArea('fixed_wall', fixedWallScale, regular_module_area, fixed_wall, fixedWallDimensions, setFixedWallScale, dispatch);
-     }
+    }
   //  else if(renderer === 'horizontal'){
   //     scaleArea('fixed_wall', fixedWallScale, horizontal_area, fixed_wall, fixedWallDimensions, setFixedWallScale);
   //   }else if(renderer === 'wp'){
@@ -109,38 +109,12 @@ function App() {
     }
     }, [displayDimensions, fixedWallDimensions, innerDimensions, regular_module_area])
 
-    //implement the logic for the fixed wall dimensions
-    // useEffect(() => {
-    //   let feetWidth = Number(innerDimensions.width);
-
-    //   feetWidth = Number(feetWidth.toString().split('.')[0]);
-
-    //   let inchesWidth = Number(roundToFixedUp(Number(innerDimensions.width), 3).slice(-3));	
-
-    //   inchesWidth = Number((inchesWidth / 83).toString().split('.')[0]);
-
-    //   let feetHeight = Number(innerDimensions.height);
-
-    //   feetHeight = Number(feetHeight.toString().split('.')[0]);
-
-    //   let inchesHeight = Number(roundToFixedUp(Number(innerDimensions.height), 3).slice(-3));
-
-    //   inchesHeight = Number((inchesHeight / 83).toString().split('.')[0]);
-      
-
-    //   setRenderedDisplayFeetHeight(feetHeight);
-    //   setRenderedDisplayFeetWidth(feetWidth);
-    //   setRenderedDisplayInchesHeight(inchesHeight);
-    //   setRenderedDisplayInchesWidth(inchesWidth);
-
-    // }, [moduleVariation, innerDimensions]);
-
   return (
     <>
       <MenuComponent />
       <main id="visual-area">
-         {/*<img id="man" src={man} height={175} width={122} style={{ scale: `${fixedWallDimensions.width === 0 || fixedWallDimensions.height === 0 ? overallScale : fixeWallScale}%`, zIndex: 5}} /> */}
-         <InfoBar />
+        {/* <img id="man" src={man} height={175} width={122} style={{ scale: `${fixedWallDimensions.width === 0 || fixedWallDimensions.height === 0 ? overallScale : fixedWallScale}%`, zIndex: 5}} />*/}
+        <InfoBar />
         {module.name && moduleVariation.name && displayDimensions.height !== 0 && displayDimensions.width !== 0 && (
           <div id="renderingArea">
             {fixedWallDimensions.width == 0 && fixedWallDimensions.height == 0 ? (

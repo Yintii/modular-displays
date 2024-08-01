@@ -4,11 +4,14 @@ import FixedWall from './components/FixedWall'
 import Display from './components/Display'
 import { RootState } from './state/store';
 import { useSelector, useDispatch } from 'react-redux';
-import { setOverallScale } from './state/menu/menuSlice';
+import { setOverallScale, setFixedWallScale } from './state/menu/menuSlice';
+import man from './assets/man.svg';
 import { 
 	scaleArea,
   roundToFixedUp
 } from './lib/helpers';
+
+
 
 export interface FixedWallProps {
     fixed_wall: React.RefObject<HTMLDivElement>;
@@ -32,6 +35,7 @@ function App() {
   const totalModules = useSelector((state: RootState) => state.menu.totalModules);
   const renderer = useSelector((state: RootState) => state.moduleMenu.renderer);
   const overallScale = useSelector((state: RootState) => state.menu.overallScale);
+  const fixedWallScale = useSelector((state: RootState) => state.menu.fixedWallScale);
 
   const regular_module_area = useRef<HTMLDivElement>(null);
   const fixed_wall = useRef<HTMLDivElement>(null);
@@ -67,7 +71,7 @@ function App() {
   //The scaling logic for the display and the fixed wall will need to have variations for each as well so that 
   //the logic for the margins is appropriately handled for each case
   useEffect(() => {
-    //if(Number(fixedWallDimensions.width) > 0 && Number(fixedWallDimensions.height) > 0) return;
+    if(Number(fixedWallDimensions.width) > 0 && Number(fixedWallDimensions.height) > 0) return;
       if(renderer === 'regular'){
         scaleArea('display', overallScale, regular_module_area, fixed_wall, displayDimensions, setOverallScale, dispatch);
       }
@@ -80,17 +84,18 @@ function App() {
       // }
     }, [displayDimensions, overallScale, fixedWallDimensions, renderer]);
 
-  //   useEffect(() => {
-  //   if(renderer === 'regular'){
-  //     scaleArea('fixed_wall', fixedWallScale, regular_module_area, fixed_wall, fixedWallDimensions, setFixedWallScale);
-  //   }else if(renderer === 'horizontal'){
+     useEffect(() => {
+     if(renderer === 'regular'){
+       scaleArea('fixed_wall', fixedWallScale, regular_module_area, fixed_wall, fixedWallDimensions, setFixedWallScale, dispatch);
+     }
+  //  else if(renderer === 'horizontal'){
   //     scaleArea('fixed_wall', fixedWallScale, horizontal_area, fixed_wall, fixedWallDimensions, setFixedWallScale);
   //   }else if(renderer === 'wp'){
   //     scaleArea('fixed_wall', fixedWallScale, wp_area, fixed_wall, fixedWallDimensions, setFixedWallScale);
   //   }else if(renderer === 'opt_slim_reg'){
   //     scaleArea('fixed_wall', fixedWallScale, opt_slim_reg_area, fixed_wall, fixedWallDimensions, setFixedWallScale);
   //   }
-  // }, [fixedWallDimensions, fixedWallScale, renderer]);
+   }, [fixedWallDimensions, fixedWallScale, renderer]);
 
   useEffect(() => {
 	const renderingArea = document.querySelector('.rendering-area') as HTMLElement;
@@ -134,7 +139,8 @@ function App() {
     <>
       <MenuComponent />
       <main id="visual-area">
-        <InfoBar />
+         {/*<img id="man" src={man} height={175} width={122} style={{ scale: `${fixedWallDimensions.width === 0 || fixedWallDimensions.height === 0 ? overallScale : fixeWallScale}%`, zIndex: 5}} /> */}
+         <InfoBar />
         {module.name && moduleVariation.name && displayDimensions.height !== 0 && displayDimensions.width !== 0 && (
           <div id="renderingArea">
             {fixedWallDimensions.width == 0 && fixedWallDimensions.height == 0 ? (

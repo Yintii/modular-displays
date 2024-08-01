@@ -40,7 +40,7 @@ const initialState: MenuState = {
     },
     totalModules: 0,
     overallScale: 100,
-    fixedWallScale: null,
+    fixedWallScale: 100,
 };
 
 const menuSlice = createSlice({
@@ -74,6 +74,10 @@ const menuSlice = createSlice({
        setOverallScale: (state, action: PayloadAction<number>) => {
             console.log("Setting overall scale: ", action.payload)
             state.overallScale = action.payload;
+        },
+        setFixedWallScale: (state, action: PayloadAction<number>) => {
+            console.log("Setting fixed wall scale: ", action.payload)
+            state.fixedWallScale = action.payload;
         }
     },
 })
@@ -87,7 +91,8 @@ export const {
     setInnerDimensions,
     setDisplayMargins,
     setTotalModules,
-    setOverallScale
+    setOverallScale,
+    setFixedWallScale
 } = menuSlice.actions;
 
 export default menuSlice.reducer;

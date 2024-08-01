@@ -5,12 +5,6 @@
   left:0;
   right:0;
   
-  img{
-        position:absolute;
-        bottom:82px;
-        transform-origin: bottom right;
-    }
-
     .rendering-area, #fixed-wall{
         position:absolute;
         transform-origin: top left;
@@ -23,12 +17,6 @@
 
     #fixed-wall{
         background-color: rgba(165, 87, 24, 0.5);
-        #display{
-          position: relative;
-          top:50%;
-          left:50%;
-          transform: translate(0, -45%);
-        }
     }
 
 

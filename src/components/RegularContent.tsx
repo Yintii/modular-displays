@@ -1,7 +1,14 @@
 import { useEffect } from 'react'
 import { RootState } from '../state/store';
 import { useSelector, useDispatch } from 'react-redux';
-import { setInnerDimensions, setDisplayMargins, setDisplayResolution, setTotalModules } from '../state/menu/menuSlice';
+import { 
+  setInnerDimensions, 
+  setDisplayMargins, 
+  setDisplayResolution, 
+  setTotalModules, 
+  setModulesNeededForWidth,
+  setModulesNeededForHeight
+} from '../state/menu/menuSlice';
 import RegularRenderingArea from './RegularRenderingArea';
 
 interface DisplayProps {

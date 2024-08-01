@@ -71,7 +71,7 @@ const menuSlice = createSlice({
         setTotalModules: (state, action: PayloadAction<number>) => {
             state.totalModules = action.payload;
         },
-        setOverallScale: (state, action: PayloadAction<number>) => {
+       setOverallScale: (state, action: PayloadAction<number>) => {
             console.log("Setting overall scale: ", action.payload)
             state.overallScale = action.payload;
         }

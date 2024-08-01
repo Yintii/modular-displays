@@ -7,6 +7,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { setOverallScale } from './state/menu/menuSlice';
 import { 
 	scaleArea,
+  roundToFixedUp
 } from './lib/helpers';
 
 export interface FixedWallProps {
@@ -42,8 +43,8 @@ function App() {
         <div id="info">
           <p>Module: {module.name}</p>
           <p>Variation: {moduleVariation.name}</p>
-          <p>Display Height: ~{displayDimensions.height}</p>
-          <p>Display Width: ~{displayDimensions.width}</p>
+          <p>Display Height: ~{ roundToFixedUp(innerDimensions.height, 2) } </p> 
+          <p>Display Width:  ~{ roundToFixedUp(innerDimensions.width, 2) } </p>
           <p>Resolution: {displayResolution.width} x {displayResolution.height}</p>
           <p>Total Modules: {totalModules}</p>
         </div>

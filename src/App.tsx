@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 import MenuComponent from './components/MenuComponent'
+import FixedWall from './components/FixedWall'
 import Display from './components/Display'
 import { RootState } from './state/store';
 import { useSelector, useDispatch } from 'react-redux';
@@ -8,6 +9,14 @@ import {
 	scaleArea,
 } from './lib/helpers';
 
+export interface FixedWallProps {
+    fixed_wall: React.RefObject<HTMLDivElement>;
+    regular_module_area: React.RefObject<HTMLDivElement>;
+}
+
+export interface DisplayProps {
+    regular_module_area: React.RefObject<HTMLDivElement>;
+}
 
 function App() {
 
@@ -54,7 +63,7 @@ function App() {
   }
 
 
-    //The scaling logic for the display and the fixed wall will need to have variations for each as well so that 
+  //The scaling logic for the display and the fixed wall will need to have variations for each as well so that 
   //the logic for the margins is appropriately handled for each case
   useEffect(() => {
     //if(Number(fixedWallDimensions.width) > 0 && Number(fixedWallDimensions.height) > 0) return;
@@ -127,7 +136,16 @@ function App() {
         <InfoBar />
         {module.name && moduleVariation.name && displayDimensions.height !== 0 && displayDimensions.width !== 0 && (
           <div id="renderingArea">
-            <Display regular_module_area={regular_module_area} />
+            {fixedWallDimensions.width == 0 && fixedWallDimensions.height == 0 ? (
+              <Display 
+                regular_module_area={regular_module_area} 
+              />
+            ) : (
+              <FixedWall 
+                fixed_wall={fixed_wall} 
+                regular_module_area={regular_module_area}
+              />
+            )}
           </div>
         )}
 

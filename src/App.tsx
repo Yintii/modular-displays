@@ -6,11 +6,8 @@ import { RootState } from './state/store';
 import { useSelector, useDispatch } from 'react-redux';
 import { setOverallScale, setFixedWallScale } from './state/menu/menuSlice';
 import man from './assets/man.svg';
-import { 
-	scaleArea,
-  roundToFixedUp
-} from './lib/helpers';
-
+//@ts-expect-error jbc
+import { scaleArea, roundToFixedUp } from './lib/helpers';
 
 
 export interface FixedWallProps {

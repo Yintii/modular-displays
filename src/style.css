@@ -29,6 +29,7 @@ html, body {
 
 #menu {
   position: relative;
+  z-index: 10;
   left: 0;
   top: 0;
   min-width: 280px;

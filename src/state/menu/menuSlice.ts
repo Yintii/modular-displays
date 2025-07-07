@@ -77,7 +77,11 @@ const menuSlice = createSlice({
         },
         setFixedWallScale: (state, action: PayloadAction<number>) => {
             console.log("Setting fixed wall scale: ", action.payload)
-            state.fixedWallScale = action.payload;
+            if(state.wallDimensions.width == 0 || state.wallDimensions.height === 0){
+              state.fixedWallScale = null;
+            }else{ 
+              state.fixedWallScale = action.payload;
+            }
         }
     },
 })

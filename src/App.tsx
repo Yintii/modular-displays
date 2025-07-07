@@ -85,7 +85,8 @@ function App() {
     }, [displayDimensions, overallScale, fixedWallDimensions, renderer]);
 
   useEffect(() => {
-     if(renderer === 'regular'){
+    if(Number(fixedWallDimensions.width) == 0 || Number(fixedWallDimensions.height) == 0) return;
+    if(renderer === 'regular'){
        scaleArea('fixed_wall', fixedWallScale, regular_module_area, fixed_wall, fixedWallDimensions, setFixedWallScale, dispatch);
     }
   //  else if(renderer === 'horizontal'){
@@ -113,7 +114,7 @@ function App() {
     <>
       <MenuComponent />
       <main id="visual-area">
-        {/* <img id="man" src={man} height={175} width={122} style={{ scale: `${fixedWallDimensions.width === 0 || fixedWallDimensions.height === 0 ? overallScale : fixedWallScale}%`, zIndex: 5}} />*/}
+        <img id="man" src={man} height={175} width={122} style={{ scale: `${fixedWallDimensions.width === 0 || fixedWallDimensions.height === 0 ? overallScale : fixedWallScale}%`, zIndex: 5}} />
         <InfoBar />
         {module.name && moduleVariation.name && displayDimensions.height !== 0 && displayDimensions.width !== 0 && (
           <div id="renderingArea">

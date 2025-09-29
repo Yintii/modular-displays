@@ -1,0 +1,124 @@
+@use 'variables';
+
+#menu{
+    position:relative;
+    left:0;
+    top:0;
+    min-width:280px;
+    max-width:280px;
+    display: flex;
+    flex-flow: column nowrap;
+    height: 100vh;
+    overflow-y: scroll !important;
+    background-color: variables.$black;
+    box-shadow: 0px 15px 15px variables.$black;
+    z-index:1;
+    #menu-header{
+      color: variables.$white;
+        h1{
+            font-family: variables.$montserrat;
+            font-size: variables.$font-size-xl;
+            margin: 0;
+            padding: 20px;
+            border-bottom: 1px solid variables.$black;
+        }
+    }
+    form{ 
+        color: variables.$white;
+        display: flex;
+        flex-flow: column nowrap;
+        padding: 20px;
+        input{
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid variables.$black;
+            border-radius: 5px;
+            font-family: variables.$ubuntu;
+            font-size: variables.$font-size-md;
+        }
+        button{
+            padding: 10px;
+            border: 1px solid variables.$black;
+            border-radius: 5px;
+            font-family: variables.$ubuntu;
+            font-size: variables.$font-size-md;
+            background-color: variables.$black;
+            color: variables.$white;
+            cursor: pointer;
+            &:hover{
+                background-color: variables.$dark-gray;
+            }
+        }
+        p{
+            font-family: variables.$ubuntu;
+            font-size: variables.$font-size-sm;
+            margin-top: 10px;
+            a{
+                color: variables.$dark-gray;
+                text-decoration: none;
+                &:hover{
+                    text-decoration: underline;
+                }
+            }
+        }
+        #fixed-info-popper, #display-info-popper{
+            display: none;
+            margin-left:10px !important;
+            background-color: rgba(0, 0, 0, 0.75);
+        }
+        .disclaimer{
+            font-family: variables.$ubuntu;
+            font-size: variables.$font-size-xs;
+            margin-top: 10px;
+            color: variables.$dark-gray;
+            background-color: variables.$white;
+            padding: 10px;
+            border-radius: 15px;
+        }
+        #toggle-tabs{
+          display: flex;
+          justify-content:space-evenly;
+          margin-top: 1rem;
+          #outdoor-tab,#indoor-tab{
+            background-color: variables.$white;
+            color: variables.$black;
+            width:100%;
+            text-align:center;
+            padding: 1rem;
+            border: 1px solid black;
+            border-top-left-radius: 25px;
+            border-top-right-radius: 25px;
+          }
+          .selected-tab{
+            border: unset !important;
+            border-top: 1px solid black;
+          }
+        }
+        #module-selector-content{
+          display:flex;
+          flex-direction: column;
+          justify-content: center;
+          background-color: variables.$white;
+          padding:1rem;
+          select{
+            margin:0.5rem;
+            text-align:center;
+          }
+        }
+        #preset-buttons{
+          display:flex;
+          flex-flow: row wrap;
+          justify-content: center;
+          align-items: center;
+          .preset-btn{
+            background-color: variables.$white;
+            color: variables.$black;
+            padding: 1rem;
+            margin: 0.5rem;
+            border-radius: 10px;
+            width: 70%;
+            text-align:center;
+          }
+        }
+    }
+}

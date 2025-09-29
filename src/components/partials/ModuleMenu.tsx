@@ -22,13 +22,13 @@ const ModuleMenu = () => {
             <div 
               id="outdoor-tab" 
               onClick={() => handleSetIndoorOutdoor('outdoor')} 
-              className="tab">
+              >
                 Outdoor
             </div>
             <div 
               id="indoor-tab" 
               onClick={() => handleSetIndoorOutdoor('indoor')} 
-              className="active tab">
+              className="selected-tab">
                 Indoor
             </div>
         </div>

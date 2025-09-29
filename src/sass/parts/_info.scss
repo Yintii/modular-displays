@@ -1,0 +1,19 @@
+@use 'variables';
+
+#info{
+    background-color: variables.$black;
+    color: variables.$white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    position: relative;
+    right: 0;
+    top: 0;
+    display: flex;
+    flex-flow: row wrap;
+    flex:1;
+    p{
+        margin:1rem;
+        font-size: variables.$font-size-sm;
+    }
+}

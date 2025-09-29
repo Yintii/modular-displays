@@ -94,9 +94,9 @@ const PresetRenderer = () => {
       const outdoorPreset = () => {
         if (!module || !module.ruleset) return null;
         return (
-            <div className='preset-buttons'>
+            <div id='preset-buttons'>
                 {module.ruleset.preset_1 &&
-                    <div className='preset-btn' onClick={() => handleSetPreset('standard')}>1080x1920</div>
+                    <div className='preset-btn' onClick={() => handleSetPreset('standard')}>Standard</div>
                 }
                 {module.ruleset.preset_2 &&
                     <div className='preset-btn'  onClick={() => handleSetPreset('bb1')}>10'H x 40'W</div>
@@ -117,9 +117,9 @@ const PresetRenderer = () => {
     const indoorPreset = () => {
         if(!module || !module.ruleset) return null;
         return (
-            <div className='preset-buttons'>
+            <div id='preset-buttons'>
                 {module.ruleset.preset_1 &&
-                    <div className='preset-btn' onClick={() => handleSetPreset('standard')}>1080x1920</div>
+                    <div className='preset-btn' onClick={() => handleSetPreset('standard')}>Standard</div>
                 }
                 {module.ruleset.preset_2 &&
                     <div className='preset-btn' onClick={() => handleSetPreset('2k')}>2k</div>
@@ -131,19 +131,19 @@ const PresetRenderer = () => {
                     <div className='preset-btn' onClick={() => handleSetPreset('8k')}>8k</div>
                 }
                 {noPreset &&
-                    <p>no preset</p>
+                    <p>No Presets</p>
                 }
             </div>
         )
     }
     
       return (
-        <div>
+        <>
             {indoorOutdoor == 'indoor' 
                 ? indoorPreset()
                 : outdoorPreset()
             }
-        </div>
+        </>
   )
 }
 

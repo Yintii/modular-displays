@@ -39,8 +39,8 @@ const PresetRenderer = () => {
       const width = width_mods * moduleVariation.physical_dimensions_inches.width * inch;
       const height = height_mods * moduleVariation.physical_dimensions_inches.height * inch;
 
-      const final_width = roundToFixedUp(parseFloat(width) / foot, 2);
-      const final_height = roundToFixedUp(parseFloat(height) / foot, 2);
+      const final_width = Number(roundToFixedUp(width / foot, 2));
+      const final_height = Number(roundToFixedUp(height / foot, 2));
 
       dispatch(setDisplayWidth(final_width));
       dispatch(setDisplayHeight(final_height));

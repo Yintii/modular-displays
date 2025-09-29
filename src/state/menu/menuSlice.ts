@@ -13,7 +13,7 @@ interface MenuState {
   displayMargins: twoDimensional;
   totalModules: number;
   overallScale: number;
-  fixedWallScale: number | null;
+  fixedWallScale: number;
   modulesNeededForWidth: number;
   modulesNeededForHeight: number;
 }
@@ -82,7 +82,7 @@ const menuSlice = createSlice({
         setFixedWallScale: (state, action: PayloadAction<number>) => {
             console.log("Setting fixed wall scale: ", action.payload)
             if(state.wallDimensions.width == 0 || state.wallDimensions.height === 0){
-              state.fixedWallScale = null;
+              state.fixedWallScale = 100;
             }else{ 
               state.fixedWallScale = action.payload;
             }

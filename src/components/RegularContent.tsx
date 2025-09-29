@@ -72,6 +72,8 @@ const RegularContent = (props: DisplayProps) => {
     }
 
     //I don't think we need to save the information related to the number needed for height and width, just use it to calculate the space the modules take up then use that to calculate the margin, then use it to calculate the total modules needed to make the rendered display
+    dispatch(setModulesNeededForWidth(mods_needed_for_width));
+    dispatch(setModulesNeededForHeight(mods_needed_for_height));
     const total = mods_needed_for_width * mods_needed_for_height;
     dispatch(setTotalModules(total));
 

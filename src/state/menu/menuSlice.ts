@@ -41,6 +41,8 @@ const initialState: MenuState = {
     totalModules: 0,
     overallScale: 100,
     fixedWallScale: null,
+    modulesNeededForWidth: 0,
+    modulesNeededForHeight: 0,
 };
 
 const menuSlice = createSlice({
@@ -82,11 +84,19 @@ const menuSlice = createSlice({
             }else{ 
               state.fixedWallScale = action.payload;
             }
+        },
+        setModulesNeededForWidth: (state, action: PayloadAction<number>) => {
+          state.modulesNeededForWidth = action.payload;
+        },
+        setModulesNeededForHeight: (state, action: PayloadAction<number>) => {
+          state.modulesNeededForHeight = action.payload;
         }
     },
 })
 
 export const { 
+    setModulesNeededForWidth,
+    setModulesNeededForHeight,
     setWallHeight,
     setWallWidth,
     setDisplayHeight,

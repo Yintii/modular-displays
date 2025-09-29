@@ -85,7 +85,7 @@ import OSCORE from '../../data/indoor/opt_score.json'
     ];
 
 
-interface ModuleMenuState {
+export interface ModuleMenuState {
     indoorOutdoor: string;
     module: Module;
     moduleVariation: Variation;

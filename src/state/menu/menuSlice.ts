@@ -5,7 +5,7 @@ interface twoDimensional {
     width: number;
 }
 
-interface MenuState {  
+export interface MenuState {  
   wallDimensions: twoDimensional;
   displayDimensions: twoDimensional;
   displayResolution: twoDimensional;

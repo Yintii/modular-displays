@@ -42,7 +42,7 @@ const initialState: MenuState = {
     },
     totalModules: 0,
     overallScale: 100,
-    fixedWallScale: null,
+    fixedWallScale: 100,
     modulesNeededForWidth: 0,
     modulesNeededForHeight: 0,
 };

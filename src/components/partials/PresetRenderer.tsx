@@ -4,6 +4,7 @@ import { RootState } from '../../state/store';
 import { roundToFixedUp } from '../../lib/helpers';
 import { setDisplayHeight, setDisplayWidth, setTotalModules } from '../../state/menu/menuSlice';
 import { setPreset } from '../../state/moduleMenu/moduleMenuSlice';
+
 const PresetRenderer = () => {
 
   const dispatch = useDispatch();
@@ -38,8 +39,8 @@ const PresetRenderer = () => {
       const width = width_mods * moduleVariation.physical_dimensions_inches.width * inch;
       const height = height_mods * moduleVariation.physical_dimensions_inches.height * inch;
 
-      const final_width = roundToFixedUp(width / foot, 2);
-      const final_height = roundToFixedUp(height / foot, 2);
+      const final_width = roundToFixedUp(parseFloat(width) / foot, 2);
+      const final_height = roundToFixedUp(parseFloat(height) / foot, 2);
 
       dispatch(setDisplayWidth(final_width));
       dispatch(setDisplayHeight(final_height));

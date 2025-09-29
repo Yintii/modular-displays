@@ -12,8 +12,10 @@ interface MenuState {
   innerDimensions: twoDimensional;
   displayMargins: twoDimensional;
   totalModules: number;
-  overallScale: number | null;
+  overallScale: number;
   fixedWallScale: number | null;
+  modulesNeededForWidth: number;
+  modulesNeededForHeight: number;
 }
 
 

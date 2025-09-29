@@ -23,7 +23,7 @@ export function roundToFixedUp(num: number, decimalPlaces: number): string {
  * Attempts to scale an area up/down depending on its bounds vs the viewport.
  */
 export function scaleArea(
-  type: "display" | "wall",
+  type: "display" | "wall" | "fixed_wall",
   currentScale: number,
   module_area: React.RefObject<HTMLElement> | null,
   fixed_wall: React.RefObject<HTMLElement> | null,

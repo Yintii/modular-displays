@@ -24,7 +24,7 @@ const FixedWall = (props: FixedWallProps) => {
               top: '45%'
           }}
     >
-        <Display regular_module_area={props.regular_module_area}/>
+        <Display module_area={props.module_area}/>
     </div>
     );
 }

@@ -60,7 +60,6 @@ const MenuComponent = () => {
             onChange={handleWallWidthChange}
           />
           </div>
-          <img width={20} height={20} id='fixed-info' className='hoverInfo' />
         </div>
         <div id="fixed-info-popper" className="disclaimer">
           <p>Here you can input dimensions for a 'fixed wall', this is to represent the area that you'd like to fit your modular display onto.</p>
@@ -95,7 +94,6 @@ const MenuComponent = () => {
             onChange={handleDisplayWidthChange}
           />
           </div>
-          <img width={20} height={20} id="display-info" className="hoverInfo"/>
         </div>
         <div id="display-info-popper" className="disclaimer">
           <p>Here you input dimensions for <strong>your desired display size.</strong>The display itself will vary in size depending on the module and variation of said module.</p>

@@ -11,6 +11,7 @@ const ModuleSelector = () => {
     
     const indoorModules     = useSelector((state: RootState) => state.moduleMenu.indoorModules);    
     const outdoorModules    = useSelector((state: RootState) => state.moduleMenu.outdoorModules);
+
     // const regularModules    = useSelector((state: RootState) => state.moduleMenu.regularModules);
     // const wpModules         = useSelector((state: RootState) => state.moduleMenu.wpModules);
     // const horizontalModules = useSelector((state: RootState) => state.moduleMenu.horizontalModules);

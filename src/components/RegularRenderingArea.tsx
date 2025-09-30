@@ -3,7 +3,7 @@ import { RootState } from '../state/store';
 import GeneratedModules from './partials/GeneratedModules';
 
 interface DisplayProps {
-    regular_module_area: React.RefObject<HTMLDivElement>;
+    module_area: React.RefObject<HTMLDivElement>;
 }
 
 const RegularRenderingArea = (props: DisplayProps) => {
@@ -17,11 +17,11 @@ const RegularRenderingArea = (props: DisplayProps) => {
 
     const foot = 30;
 
-    console.log("Rendering ref: ", props.regular_module_area.current)
+    console.log("Rendering ref: ", props.module_area.current)
 
   return (
     <div
-        ref={props.regular_module_area}
+        ref={props.module_area}
         className="rendering-area"
         style={{
             width:  `${displayDimensions.width * foot + 2}px`,

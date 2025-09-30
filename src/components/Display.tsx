@@ -1,9 +1,10 @@
 import { RootState } from '../state/store';
 import { useSelector } from 'react-redux';
 import RegularContent from './RegularContent';
+import OSRegContent from './OSRegContent';
 
 interface DisplayProps {
-    regular_module_area: React.RefObject<HTMLDivElement>;
+    module_area: React.RefObject<HTMLDivElement>;
     
 }
 
@@ -13,7 +14,8 @@ const Display = (props: DisplayProps) => {
 
     return (
         <div id="display">
-            {renderer === 'regular' && <RegularContent regular_module_area={props.regular_module_area}/>}
+            {renderer === 'regular' && <RegularContent module_area={props.module_area}/>}
+            {renderer === 'opt_slim_reg' && <OSRegContent module_area={props.module_area}/>}
         </div>
     );
 }

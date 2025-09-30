@@ -11,11 +11,11 @@ import { scaleArea, roundToFixedUp } from './lib/helpers';
 
 export interface FixedWallProps {
     fixed_wall: React.RefObject<HTMLDivElement>;
-    regular_module_area: React.RefObject<HTMLDivElement>;
+    module_area: React.RefObject<HTMLDivElement>;
 }
 
 export interface DisplayProps {
-    regular_module_area: React.RefObject<HTMLDivElement>;
+    module_area: React.RefObject<HTMLDivElement>;
 }
 
 function App() {
@@ -33,7 +33,7 @@ function App() {
   const overallScale = useSelector((state: RootState) => state.menu.overallScale);
   const fixedWallScale = useSelector((state: RootState) => state.menu.fixedWallScale);
 
-  const regular_module_area = useRef<HTMLDivElement>(null);
+  const module_area = useRef<HTMLDivElement>(null);
   const fixed_wall = useRef<HTMLDivElement>(null);
   
 
@@ -69,9 +69,9 @@ function App() {
   useEffect(() => {
     if(Number(fixedWallDimensions.width) > 0 && Number(fixedWallDimensions.height) > 0) return;
       if(renderer === 'regular'){
-        scaleArea('display', overallScale, regular_module_area, fixed_wall, displayDimensions, setOverallScale, dispatch);
+        scaleArea('display', overallScale, module_area, fixed_wall, displayDimensions, setOverallScale, dispatch);
       }
-      //else if(renderer === 'horizontal'){
+      // else if(renderer === 'horizontal'){
       //   scaleArea('display', overallScale, horizontal_area, fixed_wall, displayDimensions, setOverallScale, dispatch);
       // } else if(renderer === 'wp'){
       //   scaleArea('display', overallScale, wp_area, fixed_wall, displayDimensions, setOverallScale, dispatch);
@@ -83,7 +83,7 @@ function App() {
   useEffect(() => {
     if(Number(fixedWallDimensions.width) == 0 || Number(fixedWallDimensions.height) == 0) return;
     if(renderer === 'regular'){
-       scaleArea('fixed_wall', fixedWallScale, regular_module_area, fixed_wall, fixedWallDimensions, setFixedWallScale, dispatch);
+       scaleArea('fixed_wall', fixedWallScale, module_area, fixed_wall, fixedWallDimensions, setFixedWallScale, dispatch);
     }
   //  else if(renderer === 'horizontal'){
   //     scaleArea('fixed_wall', fixedWallScale, horizontal_area, fixed_wall, fixedWallDimensions, setFixedWallScale);
@@ -95,7 +95,7 @@ function App() {
    }, [fixedWallDimensions, fixedWallScale, renderer]);
 
   useEffect(() => {
-	const renderingArea = document.querySelector('.rendering-area') as HTMLElement;
+	const renderingArea = document.querySelector('#renderingArea') as HTMLElement;
     if (!renderingArea)return;
     // if the display dimensions are larger than non zero fixed wall dimensions, we want to change the background color of the modules to be a transparent red color
     if((Number(innerDimensions.width) > Number(fixedWallDimensions.width)) && (Number(fixedWallDimensions.width) > 0) && (Number(fixedWallDimensions.height) > 0)
@@ -104,7 +104,7 @@ function App() {
     }else{
       renderingArea.style.backgroundColor = 'rgba(255, 255, 255, 1)';
     }
-    }, [displayDimensions, fixedWallDimensions, innerDimensions, regular_module_area])
+    }, [displayDimensions, fixedWallDimensions, innerDimensions, module_area])
 
   return (
     <>
@@ -116,12 +116,12 @@ function App() {
           <div id="renderingArea">
             {fixedWallDimensions.width == 0 && fixedWallDimensions.height == 0 ? (
               <Display 
-                regular_module_area={regular_module_area} 
+                module_area={module_area} 
               />
             ) : (
               <FixedWall 
                 fixed_wall={fixed_wall} 
-                regular_module_area={regular_module_area}
+                module_area={module_area}
               />
             )}
           </div>

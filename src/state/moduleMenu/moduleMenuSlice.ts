@@ -101,6 +101,11 @@ export interface ModuleMenuState {
     optSlimReg: { name: string; data: Module };
     renderer: string;
     preset: string | null;
+    halves: boolean;
+    fives: boolean;
+    fours: boolean;
+    threes: boolean;
+    twos: boolean;
     IM2: Module;
     ISMD: Module;
     IRGB: Module;
@@ -170,6 +175,11 @@ const initialState: ModuleMenuState = {
     optSlimReg: optSlimReg,
     renderer:'regular',
     preset: null,
+    halves: false,
+    fives: false,
+    fours: false,
+    threes: false,
+    twos: false,
     IM2: IM2,
     ISMD: ISMD,
     IRGB: IRGB,
@@ -201,6 +211,35 @@ const moduleMenuSlice = createSlice({
         },
         setModule: (state, action: PayloadAction<Module>) => {
             state.module = action.payload;
+            //set the rendering depending on which module is selected
+            if(state.indoorOutdoor === 'indoor'){
+                if(state.module.name === state.optSlimReg.name){
+                    state.renderer = 'opt_slim_reg';
+                } else if(state.regularModules.indoor.find(m => m.name === state.module.name)){
+                    state.renderer = 'regular';
+                } else if(state.wpModules.find(m => m.name === state.module.name)){
+                    state.renderer = 'wp';
+                } else if(state.horizontalModules.find(m => m.name === state.module.name)){
+                    state.renderer = 'horizontal';
+                } else{
+                    state.renderer = 'regular'; //default to regular if something goes wrong
+                }
+            } else{
+                //outdoor logic
+                if(state.regularModules.outdoor.find(m => m.name === state.module.name)){
+                    state.renderer = 'regular';
+                } else{
+                    state.renderer = 'regular'; //default to regular if something goes wrong
+                }
+            }
+            //set the default variation to the first one
+            if(state.module.variations && state.module.variations.length > 0){
+                state.moduleVariation = state.module.variations[0];
+                state.moduleFactor = (state.moduleVariation.physical_dimensions_inches.width / state.moduleVariation.physical_dimensions_inches.height);
+            } else{
+                state.moduleVariation = <Variation>{};
+                state.moduleFactor = 0;
+            }
         },
         setModuleVariation: (state, action: PayloadAction<string>) => {
             const variation = state.module.variations.find((variation: Variation) => variation.name === action.payload);
@@ -211,7 +250,22 @@ const moduleMenuSlice = createSlice({
         },
         setPreset: (state, action: PayloadAction<string>) => {
             console.log('Setting preset: ', action.payload);
-            state.preset = action.payload
+            state.preset = action.payload;
+        },
+        setHalves: (state, action: PayloadAction<boolean>) => {
+            state.halves = action.payload;
+        },
+        setFives: (state, action: PayloadAction<boolean>) => {
+            state.fives = action.payload;
+        },
+        setFours: (state, action: PayloadAction<boolean>) => {
+            state.fours = action.payload;
+        },
+        setThrees: (state, action: PayloadAction<boolean>) => {
+            state.threes = action.payload;
+        },
+        setTwos: (state, action: PayloadAction<boolean>) => {
+            state.twos = action.payload;
         }
     },
 });
@@ -220,7 +274,12 @@ export const {
     setIndoorOutdoor, 
     setModule,
     setModuleVariation,
-    setPreset
+    setPreset,
+    setHalves,
+    setFives,
+    setFours,
+    setThrees,
+    setTwos
 } = moduleMenuSlice.actions;
 
 export default moduleMenuSlice.reducer;

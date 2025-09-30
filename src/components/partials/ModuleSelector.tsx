@@ -23,19 +23,10 @@ const ModuleSelector = () => {
     const IGS    = useSelector((state: RootState) => state.moduleMenu.IGS);
     const ESMD   = useSelector((state: RootState) => state.moduleMenu.ESMD);
     const IOSMD  = useSelector((state: RootState) => state.moduleMenu.IOSMD);
-    const OP1    = useSelector((state: RootState) => state.moduleMenu.OP1);
     const OP2    = useSelector((state: RootState) => state.moduleMenu.OP2);
     const OS     = useSelector((state: RootState) => state.moduleMenu.OS);
-    const OSWP19 = useSelector((state: RootState) => state.moduleMenu.OSWP19);
-    const OSWP25 = useSelector((state: RootState) => state.moduleMenu.OSWP25);
-    const OSWP26 = useSelector((state: RootState) => state.moduleMenu.OSWP26);
-    const OSWP39 = useSelector((state: RootState) => state.moduleMenu.OSWP39);
-    const OSWP48 = useSelector((state: RootState) => state.moduleMenu.OSWP48);
     const OP     = useSelector((state: RootState) => state.moduleMenu.OP);
-    const OTV    = useSelector((state: RootState) => state.moduleMenu.OTV);
-    const OWIN   = useSelector((state: RootState) => state.moduleMenu.OWIN);
-    const OCOOL  = useSelector((state: RootState) => state.moduleMenu.OCOOL);
-    const OSCORE = useSelector((state: RootState) => state.moduleMenu.OSCORE);
+
 
     const handleSetModule = (module: string) => {
         switch (module) {
@@ -45,38 +36,8 @@ const ModuleSelector = () => {
             case OS.value:
                 dispatch(setModule(OS));
                 break;
-            case OSWP19.value:
-                dispatch(setModule(OSWP19));
-                break;
-            case OSWP25.value:
-                dispatch(setModule(OSWP25));
-                break;
-            case OSWP26.value:
-                dispatch(setModule(OSWP26));
-                break;
-            case OSWP39.value:
-                dispatch(setModule(OSWP39));
-                break;
-            case OSWP48.value:
-                dispatch(setModule(OSWP48));
-                break;
-            case OP1.value:
-                dispatch(setModule(OP1));
-                break;
             case OP.value:
                 dispatch(setModule(OP));
-                break;
-            case OTV.value:
-                dispatch(setModule(OTV));
-                break;
-            case OWIN.value:
-                dispatch(setModule(OWIN));
-                break;
-            case OCOOL.value:
-                dispatch(setModule(OCOOL));
-                break;
-            case OSCORE.value:
-                dispatch(setModule(OSCORE));
                 break;
             case IM2.value:
                 dispatch(setModule(IM2));
@@ -106,7 +67,6 @@ const ModuleSelector = () => {
 
     return (
         <>
-
             {/*if indoorOutdoor is indoor, render indoor modules, otherwise render outdoor modules*/}
             {indoorOutdoor === 'indoor' ? (
                 <select onChange={(event) => handleSetModule(event.target.value)}>

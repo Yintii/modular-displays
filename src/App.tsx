@@ -68,17 +68,10 @@ function App() {
   //the logic for the margins is appropriately handled for each case
   useEffect(() => {
     if(Number(fixedWallDimensions.width) > 0 && Number(fixedWallDimensions.height) > 0) return;
-      if(renderer === 'regular'){
-        scaleArea('display', overallScale, module_area, fixed_wall, displayDimensions, setOverallScale, dispatch);
-      }
-      // else if(renderer === 'horizontal'){
-      //   scaleArea('display', overallScale, horizontal_area, fixed_wall, displayDimensions, setOverallScale, dispatch);
-      // } else if(renderer === 'wp'){
-      //   scaleArea('display', overallScale, wp_area, fixed_wall, displayDimensions, setOverallScale, dispatch);
-      // } else if(renderer === 'opt_slim_reg'){
-      //   scaleArea('display', overallScale, opt_slim_reg_area, fixed_wall, displayDimensions, setOverallScale, dispatch);
-      // }
-    }, [displayDimensions, overallScale, fixedWallDimensions, renderer]);
+    
+    scaleArea('display', overallScale, module_area, null, displayDimensions, setOverallScale, dispatch);  
+    
+  }, [displayDimensions, fixedWallDimensions, renderer]);
 
   useEffect(() => {
     if(Number(fixedWallDimensions.width) == 0 || Number(fixedWallDimensions.height) == 0) return;

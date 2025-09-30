@@ -28,8 +28,8 @@ export function scaleArea(
   module_area: React.RefObject<HTMLElement> | null,
   fixed_wall: React.RefObject<HTMLElement> | null,
   displayDimensions: { width: number; height: number },
-  setOverallScale: (scale: number) => any,
-  dispatch: (action: any) => void
+  setOverallScale: (scale: number) => { type: string; payload: number },
+  dispatch: (action: { type: string; payload: number }) => void
 ): void {
   if (!module_area?.current) return;
 
@@ -41,7 +41,7 @@ export function scaleArea(
     bounds = fixed_wall.current.getBoundingClientRect();
   }
 
-  // Create scaled bounds object where right and bottom values are increased by 5%
+  //Create scaled bounds object where right and bottom values are increased by 5%
   const scaledBounds: DOMRect = {
     ...bounds,
     right: bounds.right + bounds.right * 0.05 + 5,
@@ -68,7 +68,7 @@ export function scaleArea(
       return;
     } else {
       console.log("scaling down...");
-      dispatch(setOverallScale(currentScale + 2.5));
+      dispatch(setOverallScale(currentScale + 5));
     }
   }
 }

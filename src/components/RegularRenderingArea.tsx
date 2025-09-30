@@ -13,7 +13,9 @@ const RegularRenderingArea = (props: DisplayProps) => {
     const displayMargins = useSelector((state: RootState) => state.menu.displayMargins);
     const moduleFactor = useSelector((state: RootState) => state.moduleMenu.moduleFactor);
     const overallScale = useSelector((state: RootState) => state.menu.overallScale);
+    const fixedWallDimensions = useSelector((state: RootState) => state.menu.wallDimensions);
     const fixedWallScale = useSelector((state: RootState) => state.menu.fixedWallScale);
+
 
     const foot = 30;
 
@@ -27,7 +29,7 @@ const RegularRenderingArea = (props: DisplayProps) => {
             width:  `${displayDimensions.width * foot + 2}px`,
             height: `${displayDimensions.height * foot + 2}px`,
             border: 'dashed grey 1px',
-            scale: `${fixedWallScale ? 100 : overallScale}%`,
+            scale: `${fixedWallDimensions.width === 0 || fixedWallDimensions.height === 0 ? overallScale : fixedWallScale}%`,
             top: `${fixedWallScale ? '' : '50%'}`
         }}
     >

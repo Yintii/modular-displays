@@ -8,35 +8,18 @@ import IGS   from '../../data/outdoor/infinity_gs.json'
 import ESMD  from '../../data/outdoor/envision_smd.json'
 import IOSMD from '../../data/outdoor/infinity_one_smd.json'
 //indoor modules
-import OP1    from '../../data/indoor/opt_panel_1.json'
 import OP2    from '../../data/indoor/opt_panel_2.json'
 import OS     from '../../data/indoor/opt_slim.json'
-import OSWP19 from '../../data/indoor/opt_slim_wp_1_9.json'
-import OSWP25 from '../../data/indoor/opt_slim_wp_2_5.json'
-import OSWP26 from '../../data/indoor/opt_slim_wp_2_6.json'
-import OSWP39 from '../../data/indoor/opt_slim_wp_3_9.json'
-import OSWP48 from '../../data/indoor/opt_slim_wp_4_8.json'
 import OP     from '../../data/indoor/opt_poster.json'
-import OTV    from '../../data/indoor/opt_tv.json'
 import OWIN   from '../../data/indoor/opt_win.json'
-import OCOOL  from '../../data/indoor/opt_cool.json'
-import OSCORE from '../../data/indoor/opt_score.json'
+
 
         //these first two are just for rendering the options as a whole
     const indoorModules = [
         { name: OP2.name,    data: OP2 },
         { name: OS.name,     data: OS },
-        { name: OSWP19.name, data: OSWP19 },
-        { name: OSWP25.name, data: OSWP25 },
-        { name: OSWP26.name, data: OSWP26 },
-        { name: OSWP39.name, data: OSWP39 },
-        { name: OSWP48.name, data: OSWP48 },
-        { name: OP1.name,    data: OP1 },
         { name: OP.name,     data: OP },
-        { name: OTV.name,    data: OTV },
         { name: OWIN.name,   data: OWIN },
-        { name: OCOOL.name,  data: OCOOL },
-        { name: OSCORE.name, data: OSCORE }
     ];
 
     const outdoorModules = [
@@ -53,7 +36,6 @@ import OSCORE from '../../data/indoor/opt_score.json'
     //these are classifying arrays, used to determine which renderer to use
     const regularModules = {
         indoor: [
-            { name: OP1.name, data: OP1 },
             { name: OP2.name, data: OP2 },
             { name: IOSMD.name, data: IOSMD },
             { name: OP.name, data: OP },
@@ -69,21 +51,6 @@ import OSCORE from '../../data/indoor/opt_score.json'
         ]
     };
 
-    const wpModules = [
-        { name: 'Opt-Slim WP 1.9mm', data: OSWP19 },
-        { name: 'Opt-Slim WP 2.5mm', data: OSWP25 },
-        { name: 'Opt-Slim WP 2.6mm', data: OSWP26 },
-        { name: 'Opt-Slim WP 3.9mm', data: OSWP39 },
-        { name: 'Opt-Slim WP 4.8mm', data: OSWP48 }
-    ];
-
-    const horizontalModules = [
-        //all these happen to be indoor modules
-        { name: OTV.name, data: OTV },
-        { name: OCOOL.name, data: OCOOL },
-        { name: OSCORE.name, data: OSCORE }
-    ];
-
 
 export interface ModuleMenuState {
     indoorOutdoor: string;
@@ -96,35 +63,23 @@ export interface ModuleMenuState {
         indoor: { name: string; data: Module }[], 
         outdoor: { name: string; data: Module }[] 
     };
-    wpModules: { name: string; data: Module }[];
-    horizontalModules: { name: string; data: Module }[];
     optSlimReg: { name: string; data: Module };
     renderer: string;
     preset: string | null;
     halves: boolean;
-    fives: boolean;
-    fours: boolean;
-    threes: boolean;
-    twos: boolean;
+    fives: number;
+    fours: number;
+    threes: number;
+    twos: number;
     IM2: Module;
     ISMD: Module;
     IRGB: Module;
     IGS: Module;
     ESMD: Module;
     IOSMD: Module;
-    OP1: Module;
     OP2: Module;
     OS: Module;
-    OSWP19: Module;
-    OSWP25: Module;
-    OSWP26: Module;
-    OSWP39: Module;
-    OSWP48: Module;
     OP: Module;
-    OTV: Module;
-    OWIN: Module;
-    OCOOL: Module;
-    OSCORE: Module;
 }
 
 interface Module {
@@ -170,35 +125,23 @@ const initialState: ModuleMenuState = {
     indoorModules: indoorModules,
     outdoorModules: outdoorModules,
     regularModules: regularModules,
-    wpModules: wpModules,
-    horizontalModules: horizontalModules,
     optSlimReg: optSlimReg,
     renderer:'regular',
     preset: null,
     halves: false,
-    fives: false,
-    fours: false,
-    threes: false,
-    twos: false,
+    fives: 0,
+    fours: 0,
+    threes: 0,
+    twos: 0,
     IM2: IM2,
     ISMD: ISMD,
     IRGB: IRGB,
     IGS: IGS,
     ESMD: ESMD,
     IOSMD: IOSMD,
-    OP1: OP1,   
     OP2: OP2,
     OS: OS,
-    OSWP19: OSWP19,
-    OSWP25: OSWP25,
-    OSWP26: OSWP26,
-    OSWP39: OSWP39,
-    OSWP48: OSWP48,
     OP: OP,
-    OTV: OTV,
-    OWIN: OWIN,
-    OCOOL: OCOOL,
-    OSCORE: OSCORE
 };
 
 
@@ -217,11 +160,7 @@ const moduleMenuSlice = createSlice({
                     state.renderer = 'opt_slim_reg';
                 } else if(state.regularModules.indoor.find(m => m.name === state.module.name)){
                     state.renderer = 'regular';
-                } else if(state.wpModules.find(m => m.name === state.module.name)){
-                    state.renderer = 'wp';
-                } else if(state.horizontalModules.find(m => m.name === state.module.name)){
-                    state.renderer = 'horizontal';
-                } else{
+                }   else{
                     state.renderer = 'regular'; //default to regular if something goes wrong
                 }
             } else{
@@ -236,7 +175,7 @@ const moduleMenuSlice = createSlice({
             if(state.module.variations && state.module.variations.length > 0){
                 state.moduleVariation = state.module.variations[0];
                 state.moduleFactor = (state.moduleVariation.physical_dimensions_inches.width / state.moduleVariation.physical_dimensions_inches.height);
-            } else{
+            }else{
                 state.moduleVariation = <Variation>{};
                 state.moduleFactor = 0;
             }
@@ -255,16 +194,16 @@ const moduleMenuSlice = createSlice({
         setHalves: (state, action: PayloadAction<boolean>) => {
             state.halves = action.payload;
         },
-        setFives: (state, action: PayloadAction<boolean>) => {
+        setFives: (state, action: PayloadAction<number>) => {
             state.fives = action.payload;
         },
-        setFours: (state, action: PayloadAction<boolean>) => {
+        setFours: (state, action: PayloadAction<number>) => {
             state.fours = action.payload;
         },
-        setThrees: (state, action: PayloadAction<boolean>) => {
+        setThrees: (state, action: PayloadAction<number>) => {
             state.threes = action.payload;
         },
-        setTwos: (state, action: PayloadAction<boolean>) => {
+        setTwos: (state, action: PayloadAction<number>) => {
             state.twos = action.payload;
         }
     },

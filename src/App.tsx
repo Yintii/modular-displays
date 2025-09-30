@@ -69,22 +69,15 @@ function App() {
   useEffect(() => {
     if(Number(fixedWallDimensions.width) > 0 && Number(fixedWallDimensions.height) > 0) return;
     
-    scaleArea('display', overallScale, module_area, null, displayDimensions, setOverallScale, dispatch);  
-    
+    scaleArea('display', overallScale, module_area, null, displayDimensions, setOverallScale, dispatch);
+
   }, [displayDimensions, fixedWallDimensions, renderer]);
 
   useEffect(() => {
     if(Number(fixedWallDimensions.width) == 0 || Number(fixedWallDimensions.height) == 0) return;
-    if(renderer === 'regular'){
-       scaleArea('fixed_wall', fixedWallScale, module_area, fixed_wall, fixedWallDimensions, setFixedWallScale, dispatch);
-    }
-  //  else if(renderer === 'horizontal'){
-  //     scaleArea('fixed_wall', fixedWallScale, horizontal_area, fixed_wall, fixedWallDimensions, setFixedWallScale);
-  //   }else if(renderer === 'wp'){
-  //     scaleArea('fixed_wall', fixedWallScale, wp_area, fixed_wall, fixedWallDimensions, setFixedWallScale);
-  //   }else if(renderer === 'opt_slim_reg'){
-  //     scaleArea('fixed_wall', fixedWallScale, opt_slim_reg_area, fixed_wall, fixedWallDimensions, setFixedWallScale);
-  //   }
+
+      scaleArea('fixed_wall', fixedWallScale, module_area, fixed_wall, fixedWallDimensions, setFixedWallScale, dispatch);
+    
    }, [fixedWallDimensions, fixedWallScale, renderer]);
 
   useEffect(() => {

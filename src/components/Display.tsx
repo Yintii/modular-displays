@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import RegularContent from './RegularContent';
 import OSRegContent from './OSRegContent';
 
+
 interface DisplayProps {
     module_area: React.RefObject<HTMLDivElement>;
     

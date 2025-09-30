@@ -6,6 +6,7 @@ import {
   setIndoorOutdoor,
 } from '../../state/moduleMenu/moduleMenuSlice.ts';
 import ModuleSelector from './ModuleSelector.tsx';
+import { useEffect } from 'react';
 
 const ModuleMenu = () => {
 
@@ -16,19 +17,38 @@ const ModuleMenu = () => {
     }
 
 
+    useEffect(() =>{
+      const indoorTab = document.getElementById('indoor-tab');
+      const outdoorTab = document.getElementById('outdoor-tab');
+
+      indoorTab?.addEventListener('click', () => {
+        if(indoorTab.classList.contains('selected-tab')) return;
+        indoorTab.classList.add('selected-tab');
+        outdoorTab?.classList.remove('selected-tab');
+      });
+      
+      outdoorTab?.addEventListener('click', () => {
+        if(outdoorTab.classList.contains('selected-tab')) return;
+        outdoorTab.classList.add('selected-tab');
+        indoorTab?.classList.remove('selected-tab');
+      });
+    }, []);
+
+
   return (
     <div id="module-selector">
         <div id="toggle-tabs">
             <div 
               id="outdoor-tab" 
-              onClick={() => handleSetIndoorOutdoor('outdoor')} 
+              onClick={() => handleSetIndoorOutdoor('outdoor')}
+              className="tab"
               >
                 Outdoor
             </div>
             <div 
               id="indoor-tab" 
               onClick={() => handleSetIndoorOutdoor('indoor')} 
-              className="selected-tab">
+              className="selected-tab tab">
                 Indoor
             </div>
         </div>

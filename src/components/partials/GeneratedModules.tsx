@@ -14,11 +14,6 @@ const GeneratedModules = () => {
 
     const mods_needed_for_width = useSelector((state: RootState) => state.menu.modulesNeededForWidth);
 
-    // const fives = useSelector((state: RootState) => state.moduleMenu.fives);
-    // const fours = useSelector((state: RootState) => state.moduleMenu.fours);
-    // const threes = useSelector((state: RootState) => state.moduleMenu.threes);
-    // const twos = useSelector((state: RootState) => state.moduleMenu.twos);
-
     const inch = 2.5;
 
     if (renderer === 'regular' || renderer === 'horizontal'){
@@ -90,76 +85,7 @@ const GeneratedModules = () => {
         }
     }
     }
-    // else{//generates the wp modules
-    //     if(props.fives > 0){
-    //         for (let i = 0; i < props.fives; i++) {
-    //             modules.push(
-    //                 <div
-    //                     key={i}
-    //                     className="module"
-    //                     style={{
-    //                         width: `${props.fivesWidth}px`,
-    //                         height: `${props.wpHeight}px`,
-    //                         border: 'dotted grey 1px'
-    //                     }}
-    //                 >
-    //                     {i + 1}
-    //                 </div>
-    //             )
-    //         }
-    //     }
-    //     if(props.fours > 0){
-    //         for(let i = props.fives; i < props.fives + props.fours; i++){
-    //             modules.push(
-    //                 <div
-    //                     key={i}
-    //                     className="module"
-    //                     style={{
-    //                         width: `${props.foursWidth}px`,
-    //                         height: `${props.wpHeight}px`,
-    //                         border: 'dotted grey 1px'
-    //                     }}
-    //                 >
-    //                     {i + 1}
-    //                 </div>
-    //             )
-    //         }
-    //     }
-    //     if(props.threes > 0){
-    //         for(let i = props.fives + props.fours; i < props.fives + props.fours + props.threes; i++){
-    //             modules.push(
-    //                 <div
-    //                     key={i}
-    //                     className="module"
-    //                     style={{
-    //                         width: `${props.threesWidth}px`,
-    //                         height: `${props.wpHeight}px`,
-    //                         border: 'dotted grey 1px'
-    //                     }}
-    //                 >
-    //                     {i + 1}
-    //                 </div>
-    //             )
-    //         }
-    //     }
-    //     if(props.twos > 0){
-    //         for(let i = props.fives + props.fours + props.threes; i < props.fives + props.fours + props.threes + props.twos; i++){
-    //             modules.push(
-    //                 <div
-    //                     key={i}
-    //                     className="module"
-    //                     style={{
-    //                         width: `${props.twosWidth}px`,
-    //                         height: `${props.wpHeight}px`,
-    //                         border: 'dotted grey 1px'
-    //                     }}
-    //                 >
-    //                     {i + 1}
-    //                 </div>
-    //             )
-    //         }
-    //     }
-    // }
+
     return modules;
 };
 
